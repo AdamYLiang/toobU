@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
             );
         }
         return (
-            <>
+            <div className="login-signup-form">
                 <h2>{typeHeader}</h2>
                 {this.renderErrors()}
 
@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
                 </form>
 
                 <h2>{this.props.otherLink}</h2>
-            </>
+            </div>
         )
     }
 }
