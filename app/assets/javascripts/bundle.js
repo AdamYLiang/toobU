@@ -351,13 +351,13 @@ function (_React$Component) {
       var loginGreeting = function loginGreeting() {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "logged-in-header"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Welcome ", currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: logout
         }, "Log Out"));
       };
 
       var sessionForms = function sessionForms() {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "login-signup-nav"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/login"

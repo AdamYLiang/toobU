@@ -8,15 +8,15 @@ class Greeting extends React.Component {
         
         const loginGreeting = () => (
             <div className='logged-in-header'>
-                <h2>Welcome {currentUser.username}</h2>
+                <h2>{currentUser.username}</h2>
                 <button onClick={logout}>Log Out</button>
             </div>
         );
 
         const sessionForms = () => (
-            <nav className='login-signup-nav'>
+            <section className='login-signup-nav'>
                 <Link to='/login'>Login</Link>
-            </nav>
+            </section>
         );
 
         return currentUser ? loginGreeting() : sessionForms();
