@@ -10,7 +10,24 @@ import { login } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const store = configureStore();
+    let store;
+    let preloadedState = {};
+    if (window.currentUser) {
+        preloadedState = {
+            session: {
+                currentUser: { id: window.currentUser.id }
+            },
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            }
+        };
+        delete window.currentUser;
+        store = configureStore(preloadedState);
+    }
+    else {
+        store = configureStore();
+    }
+
 
     //TEST FUNCTIONS
     window.create = SessionAPIUtil.postUser;
