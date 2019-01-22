@@ -6,8 +6,8 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div id="homepage">
-                <NavContainer />
+            <div id="homepage-content">
+                <h1>HOMEPAGE COMPONENT GOES HERE</h1>
             </div>
         )
     }
