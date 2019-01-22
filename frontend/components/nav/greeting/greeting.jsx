@@ -16,7 +16,6 @@ class Greeting extends React.Component {
         const sessionForms = () => (
             <nav className='login-signup-nav'>
                 <Link to='/login'>Login</Link>
-                <Link to='/signup'>Signup</Link>
             </nav>
         );
 
