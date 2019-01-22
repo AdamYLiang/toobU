@@ -22,7 +22,7 @@ const receiveErrors = errors => ({
     errors
 });
 
-const blankErrors = () => ({
+export const blankErrors = () => ({
     type: RECEIVE_BLANK_ERRORS,
 });
 
