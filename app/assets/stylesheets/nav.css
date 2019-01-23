@@ -36,15 +36,18 @@
 
 .nav-bar-dropdown button {
     margin-left: 60px;
-    padding: 5px;
+    padding: 8px;
 }
 
-.nav-bar-dropdown div {
-    margin-left: 60px;
-    padding: 5px;
+.nav-bar-dropdown button:hover {
+    background: rgb(238, 238, 238);
 }
+
 
 .nav-bar-title-box {
+    margin-left: 60px;
+    margin-bottom: 20px;
+    padding: 5px;
     background: rgb(238, 238, 238);
 }
 

@@ -8,8 +8,11 @@ class Nav extends React.Component {
     render() {
         return (
             <nav className="top-nav-bar">
-                <Logo />
-                <input className="search-bar-input" type="text" placeholder="Search"/>
+                <Link to="/"><Logo /></Link>
+                <form>
+                    <input className="search-bar-input" type="text" placeholder="Search"/>
+                    <button></button>
+                </form>
                 <GreetingContainer />
             </nav>
         )
