@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                 </div>
 
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     {emailInput}
 
                     <label>
@@ -115,7 +115,7 @@ class SessionForm extends React.Component {
 
                     <div className ="login-signup-form-bottom">
                         <h2>{this.props.otherLink}</h2>
-                        <button onSubmit={this.handleSubmit} id="session-submit">{typeHeader}</button>
+                        <button type="submit" id="session-submit">{typeHeader}</button>
                     </div>
                 </form>
 

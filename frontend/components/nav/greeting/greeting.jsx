@@ -44,8 +44,8 @@ class Greeting extends React.Component {
                 <section className='login-signup-nav'>
                     <button 
                     onClick={this.showMenu} 
-                    className="username-button-text">
-                        {currentUser.username}
+                    className="username-button">
+                        {currentUser.username.slice(0, 1)}
                     </button>
 
                     {dropdown}
