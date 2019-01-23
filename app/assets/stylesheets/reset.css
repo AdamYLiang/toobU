@@ -1,7 +1,7 @@
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p,
-fieldset, label,
+fieldset, label, button, input,
 span, article, footer, time, small {
   margin: 0;
   padding: 0;
@@ -14,6 +14,7 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: border-box;
   background: transparent;
+  font-family: 'Roboto', sans-serif;
 }
 
 ul {

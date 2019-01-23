@@ -5,12 +5,45 @@ class SessionForm extends React.Component {
         super(props);
         this.state = this.props.user;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLoginHelper = this.demoLoginHelper.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.submitForm(this.state);
+    }
+
+    demoLogin(e) {
+        e.preventDefault();
+        const username = 'TestUser'.split('');
+        const password = '111111'.split('');
+        const submit = document.getElementById('session-submit');
+        this.setState({ username: '', password: '' }, () => {
+            this.demoLoginHelper(username, password, submit);
+        });
+    }
+
+    demoLoginHelper(username, password, submit) {
+        if (username.length > 0) {
+            this.setState(
+                { username: this.state.username + username.shift() }, () => {
+                    window.setTimeout(() =>
+                        this.demoLoginHelper(username, password, submit), 50);
+                }
+            );
+        } 
+        else if (password.length > 0) {
+            this.setState(
+                { password: this.state.password + password.shift() }, () => {
+                    window.setTimeout(() =>
+                        this.demoLoginHelper(username, password, submit), 50);
+                }
+            );
+        } else {
+            submit.click();
+        }
     }
 
     update(field) {
@@ -36,34 +69,58 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const typeHeader = (this.props.formType === 'login' ? 'Sign In' : 'Create Account');
+        const typeHeader = (this.props.formType === 'login') ? 'Sign In' : 'Sign Up';
+        const demoButton = (this.props.formType === 'login') 
+            ? <button onClick={this.demoLogin} className="demo-btn">Demo user</button>
+            : ""
         let emailInput;
+
         if (this.props.formType === 'signup') {
             emailInput = (
                 <>
-                    <label> Email:
-                        <input type="text" value={this.state.email} onChange={this.update('email')} />
+                    <label>
+                        <input 
+                        type="text" 
+                        value={this.state.email} 
+                        onChange={this.update('email')}
+                        placeholder="Email" />
                     </label>
                 </>
             );
         }
         return (
             <div className="login-signup-form">
-                <h2>{typeHeader}</h2>
-                {this.renderErrors()}
+                <div className="login-signup-form-top">
+                    <h2 className= "login-signup-h2">{typeHeader}</h2>
+                    {this.renderErrors()}
+                </div>
 
                 <form onSubmit={this.handleSubmit}>
                     {emailInput}
-                    <label> Username:
-                        <input type="text" value={this.state.username} onChange={this.update('username')} />
+
+                    <label>
+                        <input 
+                        type="text" 
+                        value={this.state.username} 
+                        onChange={this.update('username')}
+                        placeholder="Username" />
                     </label>
-                    <label> Password:
-                        <input type="password" value={this.state.password} onChange={this.update('password')} />
+                    <label>
+                        <input 
+                        type="password" 
+                        value={this.state.password} 
+                        onChange={this.update('password')}
+                        placeholder="Password" />
                     </label>
-                    <input type="submit" value={typeHeader} />
+
+                    <div className ="login-signup-form-bottom">
+                        <h2>{this.props.otherLink}</h2>
+                        <button onClick={this.handleSubmit} id="session-submit">{typeHeader}</button>
+                    </div>
                 </form>
 
-                <h2>{this.props.otherLink}</h2>
+                {demoButton}
+
             </div>
         )
     }
