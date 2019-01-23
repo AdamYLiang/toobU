@@ -36,34 +36,48 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const typeHeader = (this.props.formType === 'login' ? 'Sign In' : 'Create Account');
+        const typeHeader = (this.props.formType === 'login' ? 'Sign In' : 'Sign Up');
         let emailInput;
         if (this.props.formType === 'signup') {
             emailInput = (
                 <>
-                    <label> Email:
-                        <input type="text" value={this.state.email} onChange={this.update('email')} />
+                    <label>
+                        <input 
+                        type="text" 
+                        value={this.state.email} 
+                        onChange={this.update('email')}
+                        placeholder="Email" />
                     </label>
                 </>
             );
         }
         return (
             <div className="login-signup-form">
-                <h2>{typeHeader}</h2>
+                <h2 className= "login-signup-h2">{typeHeader}</h2>
 
                 {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
                     {emailInput}
-                    <label> Username:
-                        <input type="text" value={this.state.username} onChange={this.update('username')} />
+                    <label>
+                        <input 
+                        type="text" 
+                        value={this.state.username} 
+                        onChange={this.update('username')}
+                        placeholder="Username" />
                     </label>
-                    <label> Password:
-                        <input type="password" value={this.state.password} onChange={this.update('password')} />
+                    <label>
+                        <input 
+                        type="password" 
+                        value={this.state.password} 
+                        onChange={this.update('password')}
+                        placeholder="Password" />
                     </label>
-                    <input type="submit" value={typeHeader} />
                 </form>
 
-                <h2>{this.props.otherLink}</h2>
+                <div className ="login-signup-form-bottom">
+                    <h2>{this.props.otherLink}</h2>
+                    <button onClick={this.handleSubmit}>{typeHeader}</button>
+                </div>
             </div>
         )
     }
