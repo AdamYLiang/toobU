@@ -32,6 +32,16 @@
     color: white;
 }
 
+.demo-btn {
+       width: 88px;
+    height: 36px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+    background: rgb(26, 115, 232);
+    color: white; 
+}
+
 .login-signup-form-bottom h2 {
     color: rgb(6, 95, 212);
     margin: auto 0;
