@@ -21,7 +21,8 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  #FGRIPE
+  has_many :channels, dependant: :destroy
+  has_many :videos, through: :channels
 
   def self.find_by_credentials(params)
     user = User.find_by(username: params[:username]) || User.find_by(email: params[:username])
