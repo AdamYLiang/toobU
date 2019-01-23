@@ -55,7 +55,7 @@ class Greeting extends React.Component {
 
         const sessionForms = () => (
             <section className='login-signup-nav'>
-                <Link to='/login'>Login</Link>
+                <Link to='/login' className='nav-login-link'>Login</Link>
             </section>
         );
 

@@ -12,8 +12,8 @@
 #
 
 class User < ApplicationRecord
-  validates_presence_of :username, :session_token, :password_digest
-  validates_uniqueness_of :username, :session_token, :password_digest
+  validates_presence_of :email, :username, :session_token, :password_digest
+  validates_uniqueness_of :email, :username, :session_token, :password_digest
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token

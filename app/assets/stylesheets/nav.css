@@ -51,3 +51,7 @@
 .nav-bar-title-box > * {
     padding: 5px 0;
 }
+
+.nav-login-link {
+    color: rgb(6, 95, 212);
+}
