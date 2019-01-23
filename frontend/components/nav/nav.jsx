@@ -9,7 +9,7 @@ class Nav extends React.Component {
         return (
             <nav className="top-nav-bar">
                 <Logo />
-                <h1>SEARCH FILLER</h1>
+                <input className="search-bar-input" type="text" placeholder="Search"/>
                 <GreetingContainer />
             </nav>
         )

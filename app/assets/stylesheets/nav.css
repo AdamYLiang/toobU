@@ -55,3 +55,12 @@
 .nav-login-link {
     color: rgb(6, 95, 212);
 }
+
+.search-bar-input {
+    width: 500px; 
+    height: 30px;
+    padding: 13px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
