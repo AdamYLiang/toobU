@@ -9,3 +9,45 @@
     margin: 0 auto;
     box-shadow: 0px 3px 7px -3px #D1D1D1;
 }
+
+.login-signup-nav {
+    display: flex;
+    position: relative;
+    width: auto;
+    align-items: center;
+}
+
+.login-signup-nav:first-child {
+    position: absolute;
+    z-index: 100;
+}
+
+.nav-bar-dropdown {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    top: 40px;
+    right: -100px;
+    width: 300px;
+    box-shadow: 0px 3px 7px -3px #D1D1D1;
+}
+
+.nav-bar-dropdown button {
+    margin-left: 60px;
+    padding: 5px;
+}
+
+.nav-bar-dropdown div {
+    margin-left: 60px;
+    padding: 5px;
+}
+
+.nav-bar-title-box {
+    background: rgb(238, 238, 238);
+}
+
+.nav-bar-title-box > * {
+    padding: 5px 0;
+}
