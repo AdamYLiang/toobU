@@ -13,7 +13,8 @@
 
 class User < ApplicationRecord
   validates_presence_of :email, :username, :session_token, :password_digest
-  validates_uniqueness_of :email, :username, :session_token, :password_digest
+  validates_uniqueness_of :email, :username, :case_sensitive => false
+  validates_uniqueness_of :session_token, :password_digest
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
@@ -23,7 +24,7 @@ class User < ApplicationRecord
   #FGRIPE
 
   def self.find_by_credentials(params)
-    user = User.find_by(username: params[:username]) || User.find_by(email: params[:email])
+    user = User.find_by(username: params[:username]) || User.find_by(email: params[:username])
     return user if user && user.is_password?(params[:password])
     nil
   end

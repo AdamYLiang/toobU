@@ -39,6 +39,12 @@
     color: white;
 }
 
+.login-signup-form-bottom h2 {
+    color: rgb(6, 95, 212);
+    margin: auto 0;
+    text-align: center;
+}
+
 .login-signup-form ul {
     display: flex; 
     flex-direction: column;
