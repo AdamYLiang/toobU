@@ -11,7 +11,7 @@ class Nav extends React.Component {
                 <Link to="/"><Logo /></Link>
                 <form>
                     <input className="search-bar-input" type="text" placeholder="Search"/>
-                    <button></button>
+                    <button className="search-bar-icon"><i className="fas fa-search"></i></button>
                 </form>
                 <GreetingContainer />
             </nav>
