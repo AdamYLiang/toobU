@@ -67,3 +67,12 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.username-button {
+    width: 32px;
+    height: 32px;
+    background: #F5501E;
+    text-align: center;
+    color: white;
+    
+}

@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import Nav from './nav';
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ session, entities: { users }}) => {
+    const sessionUser = session.currentUser || {};
     return {
+        currentUser: users[sessionUser.id]
     };
 };
 
