@@ -10,14 +10,6 @@
     border-radius: 8px;
 }
 
-.login-signup-form form {
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 336px;
-    height: 220px;
-}
-
 .login-signup-h2 {
     font-size: 24px;
     font-weight: 400;
@@ -45,6 +37,12 @@
     text-align: center;
 }
 
+.login-signup-form-top {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 .login-signup-form ul {
     display: flex; 
     flex-direction: column;
@@ -52,10 +50,15 @@
     font-size: 12px;
     color: rgb(213, 0, 0);
     width: 220px;
-    height: 40px;
     text-align: center;
-    margin-top: -30px;
-    margin-bottom: -60px;
+}
+
+.login-signup-form form {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 336px;
+    height: 280px;
 }
 
 .login-signup-form input { 
@@ -65,3 +68,4 @@
   border-radius: 4px;
   width: 100%;
 }
+

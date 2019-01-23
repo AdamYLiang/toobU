@@ -53,11 +53,14 @@ class SessionForm extends React.Component {
         }
         return (
             <div className="login-signup-form">
-                <h2 className= "login-signup-h2">{typeHeader}</h2>
+                <div className="login-signup-form-top">
+                    <h2 className= "login-signup-h2">{typeHeader}</h2>
+                    {this.renderErrors()}
+                </div>
 
-                {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
                     {emailInput}
+
                     <label>
                         <input 
                         type="text" 
@@ -72,12 +75,13 @@ class SessionForm extends React.Component {
                         onChange={this.update('password')}
                         placeholder="Password" />
                     </label>
+
+                    <div className ="login-signup-form-bottom">
+                        <h2>{this.props.otherLink}</h2>
+                        <button onClick={this.handleSubmit}>{typeHeader}</button>
+                    </div>
                 </form>
 
-                <div className ="login-signup-form-bottom">
-                    <h2>{this.props.otherLink}</h2>
-                    <button onClick={this.handleSubmit}>{typeHeader}</button>
-                </div>
             </div>
         )
     }
