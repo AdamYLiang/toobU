@@ -5,7 +5,7 @@
     align-items: center;
     margin: 15% auto;
     width: 450px;
-    height: 502px;
+    padding: 70px;
     border: 1px solid #dadce0;
     border-radius: 8px;
 }
@@ -13,6 +13,7 @@
 .login-signup-h2 {
     font-size: 24px;
     font-weight: 400;
+    margin-bottom: 10px
 }
 
 .login-signup-form-bottom {
