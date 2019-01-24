@@ -78,10 +78,10 @@ class SessionForm extends React.Component {
         const demoButton = (this.props.formType === 'login') 
             ? <div className="demo-user">
                 <h2>Want a quick demo?</h2>
-                <button 
+                <section 
                     onClick={this.demoLogin} 
-                    className="demo-btn"> Demo account
-                </button>
+                    className="demo-btn-section"> Demo account
+                </section>
               </div>
             : ""
         let emailInput;

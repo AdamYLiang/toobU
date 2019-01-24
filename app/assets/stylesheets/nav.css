@@ -1,4 +1,7 @@
 .top-nav-bar {
+    top: 0;
+    left: 0;
+    z-index: 1;
     display: flex;
     position: fixed;
     width: 100%;

@@ -17,11 +17,13 @@ class Greeting extends React.Component {
     }
 
     closeMenu(e) {
-        if(this.props.currentUser && !this.dropdownMenu.contains(e.target)){
-            this.setState({ showDropdown: false}, () => {
-                document.removeEventListener('click', this.closeMenu);
-            });
-        }
+        if(this.props.currentUser && this.dropdownMenu){
+            if (!this.dropdownMenu.contains(e.target)){
+                this.setState({ showDropdown: false }, () => {
+                    document.removeEventListener('click', this.closeMenu);
+                });
+            }
+        }   
     }
 
     render() {
@@ -43,9 +45,9 @@ class Greeting extends React.Component {
                             </section>
                         </div>
                         <div className='nav-bar-buttons-box'>
-                            <Link to={ userChannelIds
-                                ? `/channel/${userChannelIds[0]}`
-                                : `/user/${currentUser.id}`
+                            <Link to={ (userChannelIds === undefined || userChannelIds.length === 0)
+                                ? `/user/${currentUser.id}`
+                                : `/channel/${userChannelIds[0]}`
                                 }>
                                 <button>
                                     <i className="far fa-user fa-lg"></i>

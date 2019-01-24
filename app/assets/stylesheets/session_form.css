@@ -87,13 +87,11 @@
     font-size: 14px;
 }
 
-.demo-user button {
+.demo-btn-section {
     font-weight: bolder;
-}
-
-.demo-btn {
     font-size: 14px;
     color: rgb(6, 95, 212); 
+    cursor: pointer;
 }
 
 

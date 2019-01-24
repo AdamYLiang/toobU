@@ -1,6 +1,9 @@
 #main-content {
     display: flex;
+    position: relative;
+    top: 20px;
     width: 100%;
     height: 100%;
     align-content: center;
+    margin-top: 60px;
 }
