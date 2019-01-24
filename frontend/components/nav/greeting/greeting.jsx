@@ -33,12 +33,20 @@ class Greeting extends React.Component {
                         <div className='nav-bar-title-box'>
                             <h1 className='user-dropdown-icon'>{currentUser.username.slice(0, 1)}</h1>
                             <section className ='user-dropdown-details'>
-                                <h2>{currentUser.username}</h2>
+                                <h1>{currentUser.username}</h1>
                                 <h2>{currentUser.email}</h2>
                             </section>
                         </div>
-                        <button> My Channel </button>
-                        <button onClick={logout}>Sign Out</button>
+                        <div className='nav-bar-buttons-box'>
+                            <button>
+                                <i className="far fa-user fa-lg"></i>
+                                <h3> My Channel </h3>
+                            </button>
+                            <button onClick={logout}>
+                                <i className="fas fa-sign-out-alt fa-lg"></i>
+                                <h3>Sign Out</h3>
+                            </button>
+                        </div>
                     </div>
                 )
             }
@@ -58,7 +66,7 @@ class Greeting extends React.Component {
 
         const sessionForms = () => (
             <section className='login-signup-nav'>
-                <Link to='/login' className='nav-login-link'>Login</Link>
+                <Link to='/login' className='nav-login-link'>SIGN IN</Link>
             </section>
         );
 
