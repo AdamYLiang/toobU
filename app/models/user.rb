@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :channels, dependant: :destroy
+  has_many :channels, dependent: :destroy
   has_many :videos, through: :channels
 
   def self.find_by_credentials(params)

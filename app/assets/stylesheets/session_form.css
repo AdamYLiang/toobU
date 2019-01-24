@@ -18,7 +18,7 @@
 
 .login-signup-form-bottom {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }   
 
@@ -79,4 +79,6 @@
   border-radius: 4px;
   width: 100%;
 }
+
+
 

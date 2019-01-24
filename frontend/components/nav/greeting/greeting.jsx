@@ -31,8 +31,11 @@ class Greeting extends React.Component {
                 dropdown = (
                     <div className='nav-bar-dropdown'> 
                         <div className='nav-bar-title-box'>
-                            <h2>{currentUser.username}</h2>
-                            <p>{currentUser.email}</p>
+                            <h1 className='user-dropdown-icon'>{currentUser.username.slice(0, 1)}</h1>
+                            <section className ='user-dropdown-details'>
+                                <h2>{currentUser.username}</h2>
+                                <h2>{currentUser.email}</h2>
+                            </section>
                         </div>
                         <button> My Channel </button>
                         <button onClick={logout}>Sign Out</button>

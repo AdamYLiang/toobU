@@ -66,6 +66,11 @@ class SessionForm extends React.Component {
 
     componentDidMount() {
         this.props.clearErrors();
+        document.body.style.overflow = "hidden";
+    }
+
+    componentWillUnmount(){
+        document.body.style.overflow = "visible";
     }
 
     render() {
