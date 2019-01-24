@@ -6,9 +6,9 @@ import Greeting from './greeting';
 const mapStateToProps = ({ session, entities: { users, channels } }) => {
     //Set the session to null if it doesnt exist, otherwise will find ID 
     const sessionUser = session.currentUser || {};
-    debugger
     return {
         currentUser: users[sessionUser.id],
+        userChannel: channels,
     };
 };
 

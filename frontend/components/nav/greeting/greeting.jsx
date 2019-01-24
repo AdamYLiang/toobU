@@ -25,8 +25,7 @@ class Greeting extends React.Component {
     }
 
     render() {
-        const { currentUser, logout } = this.props;
-        
+        const { currentUser, logout, userChannel } = this.props;
         const loginGreeting = () => {
             let dropdown = <div className='nav-bar-dropdown'></div>;
             if (this.state.showDropdown){
@@ -45,7 +44,7 @@ class Greeting extends React.Component {
                         </div>
                         <div className='nav-bar-buttons-box'>
                             <Link to={ currentUser.channels 
-                                ? `/channel/${currentUser.channels.first}`
+                                ? `/channel/${userChannel.channels.first}`
                                 : `/user/${currentUser.id}`
                                 }>
                                 <button>
