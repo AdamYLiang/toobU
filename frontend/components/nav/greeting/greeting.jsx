@@ -16,10 +16,12 @@ class Greeting extends React.Component {
         });
     }
 
-    closeMenu() {
-        this.setState({ showDropdown: false}, () => {
-            document.removeEventListener('click', this.closeMenu);
-        });
+    closeMenu(e) {
+        if(this.props.currentUser && !this.dropdownMenu.contains(e.target)){
+            this.setState({ showDropdown: false}, () => {
+                document.removeEventListener('click', this.closeMenu);
+            });
+        }
     }
 
     render() {
@@ -29,7 +31,11 @@ class Greeting extends React.Component {
             let dropdown = <div className='nav-bar-dropdown'></div>;
             if (this.state.showDropdown){
                 dropdown = (
-                    <div className='nav-bar-dropdown'> 
+                    <div 
+                    className='nav-bar-dropdown'
+                    ref={(element) => {
+                        this.dropdownMenu = element;
+                    }}> 
                         <div className='nav-bar-title-box'>
                             <h1 className='user-dropdown-icon'>{currentUser.username.slice(0, 1)}</h1>
                             <section className ='user-dropdown-details'>
