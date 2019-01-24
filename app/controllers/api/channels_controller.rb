@@ -14,6 +14,7 @@ class Api::ChannelsController < ApplicationController
     end
 
     def index 
+        
     end
 
     def update 

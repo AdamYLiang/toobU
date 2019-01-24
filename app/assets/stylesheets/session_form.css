@@ -32,20 +32,16 @@
     color: white;
 }
 
-.demo-btn {
-       width: 88px;
-    height: 36px;
-    font-size: 14px;
-    text-align: center;
-    border-radius: 4px;
-    background: rgb(26, 115, 232);
-    color: white; 
-}
-
 .login-signup-form-bottom h2 {
     color: rgb(6, 95, 212);
     margin: auto 0;
     text-align: center;
+    font-size: 14px;
+    font-weight: 500px;
+}
+
+.login-signup-form a {
+    font-weight: bolder;
 }
 
 .login-signup-form-top {
@@ -80,5 +76,24 @@
   width: 100%;
 }
 
+.demo-user {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.demo-user h2 {
+    color: rgb(95, 99, 104);
+    font-size: 14px;
+}
+
+.demo-user button {
+    font-weight: bolder;
+}
+
+.demo-btn {
+    font-size: 14px;
+    color: rgb(6, 95, 212); 
+}
 
 

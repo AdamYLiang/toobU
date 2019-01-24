@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
         user: { username: "", password: "" },
         errors: state.errors.session,
         formType: 'login',
-        otherLink: <Link to="/signup">Create Account</Link>
+        otherLink: <Link to="/signup">Create account</Link>
     };
 };
 

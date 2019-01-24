@@ -13,8 +13,11 @@
 .login-signup-nav {
     display: flex;
     position: relative;
+    justify-content: center;
+    height: 40px;
     width: auto;
     align-items: center;
+    padding: 0 6px;
 }
 
 .login-signup-nav:first-child {
@@ -86,6 +89,8 @@
 
 .nav-login-link {
     color: rgb(6, 95, 212);
+    font-size: 14px;
+    font-weight: 500px;
 }
 
 .search-bar-input {
@@ -119,7 +124,8 @@
     vertical-align: middle;
     color: white;
     border-radius: 50%;
-    margin-right: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .user-dropdown-icon {

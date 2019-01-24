@@ -76,7 +76,13 @@ class SessionForm extends React.Component {
     render() {
         const typeHeader = (this.props.formType === 'login') ? 'Sign In' : 'Sign Up';
         const demoButton = (this.props.formType === 'login') 
-            ? <button onClick={this.demoLogin} className="demo-btn">Demo user</button>
+            ? <div className="demo-user">
+                <h2>Want a quick demo?</h2>
+                <button 
+                    onClick={this.demoLogin} 
+                    className="demo-btn"> Demo account
+                </button>
+              </div>
             : ""
         let emailInput;
 
@@ -118,14 +124,13 @@ class SessionForm extends React.Component {
                         placeholder="Password" />
                     </label>
 
+                    {demoButton}
+
                     <div className ="login-signup-form-bottom">
                         <h2>{this.props.otherLink}</h2>
                         <button type="submit" id="session-submit">{typeHeader}</button>
                     </div>
                 </form>
-
-                {demoButton}
-
             </div>
         )
     }
