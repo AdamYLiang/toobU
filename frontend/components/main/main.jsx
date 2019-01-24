@@ -5,6 +5,10 @@ import HomeContainer from '../home/home_container';
 
 class Home extends React.Component {
 
+    componentDidMount(){
+        this.props.fetchChannels();
+    }
+
     render() {
         return (
             <>

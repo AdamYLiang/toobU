@@ -44,10 +44,15 @@ class Greeting extends React.Component {
                             </section>
                         </div>
                         <div className='nav-bar-buttons-box'>
-                            <button>
-                                <i className="far fa-user fa-lg"></i>
-                                <h3> My Channel </h3>
-                            </button>
+                            <Link to={ currentUser.channels 
+                                ? `/channel/${currentUser.channels.first}`
+                                : `/user/${currentUser.id}`
+                                }>
+                                <button>
+                                    <i className="far fa-user fa-lg"></i>
+                                        <h3> My Channel </h3>
+                                </button>
+                            </Link>
                             <button onClick={logout}>
                                 <i className="fas fa-sign-out-alt fa-lg"></i>
                                 <h3>Sign Out</h3>
@@ -56,7 +61,6 @@ class Greeting extends React.Component {
                     </div>
                 )
             }
-
             return (
                 <section className='login-signup-nav'>
                     <button 

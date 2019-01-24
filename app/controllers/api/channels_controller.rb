@@ -14,7 +14,9 @@ class Api::ChannelsController < ApplicationController
     end
 
     def index 
-        
+        current_user_id = current_user.id || {}
+        # @channels = Channel.where(user_id: current_user_id)
+        @channels = Channel.all
     end
 
     def update 
