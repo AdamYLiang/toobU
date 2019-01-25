@@ -21,9 +21,17 @@ class Channel extends React.Component {
 
     render () {
         const { owner, channel, channelId } = this.props;
+        const ownerInitial = owner.username ? owner.username.slice(0, 1).toUpperCase() : "";
         return (
             <>
                 <div className="channel-content">
+
+                    <div className="channel-header">
+                        <button>{ownerInitial}</button>
+                        <h2>{owner.username}</h2>
+                        <button>Customize Channel</button>
+                    </div>
+
                     <NavLink to={`/channel/${channelId}`}>HOME</NavLink>
                     <NavLink to={`/channel/${channelId}/videos`}>VIDEOS</NavLink>
                     <NavLink to={`/channel/${channelId}/about`}>ABOUT</NavLink>
