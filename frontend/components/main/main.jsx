@@ -8,7 +8,7 @@ import { AuthRoute } from '../../util/route_util';
 class Home extends React.Component {
 
     componentDidMount(){
-        this.props.fetchChannels();
+        // this.props.fetchChannels();
     }
 
     render() {
