@@ -34,10 +34,11 @@ class Greeting extends React.Component {
                 dropdown = (
                     <div 
                     className='nav-bar-dropdown'
-                    ref={(element) => {
-                        this.dropdownMenu = element;
-                    }}> 
-                        <div className='nav-bar-title-box'>
+                    > 
+                        <div className='nav-bar-title-box'
+                            ref={(element) => {
+                                this.dropdownMenu = element;
+                        }}>
                             <h1 className='user-dropdown-icon'>{currentUser.username.slice(0, 1)}</h1>
                             <section className ='user-dropdown-details'>
                                 <h1>{currentUser.username}</h1>
