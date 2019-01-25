@@ -1,5 +1,8 @@
 import React from 'react';
-import ChannelTabs from './channel_tabs_container';
+import ChannelTab from './channel_tabs';
+import Homepage from './channel_homepage';
+import VideosPage from './channel_videos';
+import AboutPage from './channel_about';
 import { NavLink, Route, withRouter, Switch } from 'react-router-dom';
 
 class Channel extends React.Component {
@@ -26,9 +29,18 @@ class Channel extends React.Component {
                     <NavLink to={`/channel/${channelId}/about`}>ABOUT</NavLink>
 
                     <Switch> 
-                        <Route exact path="/channel/:channelId/videos" component={ChannelTabs} />
-                        <Route exact path="/channel/:channelId/about" component={ChannelTabs} />
-                        <Route exact path="/channel/:channelId" component={ChannelTabs} />
+                        <Route 
+                        exact path="/channel/:channelId/videos" 
+                        render={() => <VideosPage {...this.props}/>} 
+                        />
+                        <Route 
+                        exact path="/channel/:channelId/about" 
+                        render={() => <AboutPage {...this.props}/>} 
+                        />
+                        <Route 
+                        exact path="/channel/:channelId/" 
+                        render={() => <Homepage {...this.props}/>} 
+                        />
                     </Switch>
                 </div>
             </>

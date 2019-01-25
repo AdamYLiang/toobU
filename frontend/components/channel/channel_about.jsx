@@ -1,15 +1,16 @@
 import React from 'react';
 
-class ChannelHomepage extends React.Component {
+class ChannelAbout extends React.Component {
     render() {
         const { owner, channel } = this.props;
         return (
             <div class="channel-homepage-content">
                 {owner.username}
+                {owner.email}
                 {channel.name}
             </div>
         );
     }
 }
 
-export default ChannelHomepage;
+export default ChannelAbout;

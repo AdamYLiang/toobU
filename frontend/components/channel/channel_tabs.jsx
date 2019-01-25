@@ -7,7 +7,6 @@ class Tabs extends React.Component {
     }
 
     changeTab(idx) {
-        debugger
         this.setState({ tabId: idx });
     }
 
@@ -17,7 +16,6 @@ class Tabs extends React.Component {
         const tabs = tabHeader.map((header, idx) => {
             return (<p className="channel-tabs" onClick={this.changeTab.bind(this, idx)} key={idx}>{header}</p>)
         })
-
         return (
             <>
                 <section className="channel-tabs-section">
@@ -26,6 +24,8 @@ class Tabs extends React.Component {
                     </div>
                     <div className="tab-content">
                         {this.state.contents[this.state.tabId]}
+                        {channel.description}
+                        {channel.name}
                     </div>
                 </section>
             </>
