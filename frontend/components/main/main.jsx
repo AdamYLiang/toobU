@@ -3,7 +3,7 @@ import { Link, Switch, Route, withRouter } from 'react-router-dom';
 import NavContainer from '../nav/nav_container';
 import HomeContainer from '../home/home_container';
 import ChannelContainer from '../channel/channel_container';
-import { AuthRoute } from '../../util/route_util';
+import { AuthRoute, CreateChannelRoute } from '../../util/route_util';
 
 class Main extends React.Component {
 
@@ -17,6 +17,7 @@ class Main extends React.Component {
             <NavContainer />
             <div id="main-content">
                 <Switch>
+                    <CreateChannelRoute path="/create_channel" component={HomeContainer} />
                     <Route path="/channel/:channelId" component={ChannelContainer}/>
                     <Route path="/" component={HomeContainer} />
                 </Switch>

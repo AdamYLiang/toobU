@@ -47,7 +47,7 @@ class Greeting extends React.Component {
                         </div>
                         <div className='nav-bar-buttons-box'>
                             <Link to={ (userChannelIds === undefined || userChannelIds.length === 0)
-                                ? `/user/${currentUser.id}`
+                                ? `/create_channel`
                                 : `/channel/${userChannelIds[0]}`
                                 }>
                                 <button>
