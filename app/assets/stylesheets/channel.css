@@ -20,6 +20,10 @@
     justify-content: flex-start;
 }
 
+.channel-header-detail h2 {
+    width: 25%;
+}
+
 .channel-header-links {
     display: flex;
     justify-content: space-around;
@@ -34,6 +38,7 @@
     color: rgb(10, 10, 10);
 }
 
+
 .channel-icon {
     width: 80px;
     height: 80px;
@@ -46,4 +51,8 @@
     margin-right: 8px;
     font-size: 45px;
     margin-right: 24px;
+}
+
+.customize-channel-button {
+    margin-left: 24px;
 }
