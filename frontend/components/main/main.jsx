@@ -5,7 +5,7 @@ import HomeContainer from '../home/home_container';
 import ChannelContainer from '../channel/channel_container';
 import { AuthRoute } from '../../util/route_util';
 
-class Home extends React.Component {
+class Main extends React.Component {
 
     componentDidMount(){
         // this.props.fetchChannels();
@@ -26,6 +26,4 @@ class Home extends React.Component {
     }
 }
 
-
-
-export default withRouter(Home);
+export default withRouter(Main);

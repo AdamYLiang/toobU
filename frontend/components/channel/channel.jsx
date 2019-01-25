@@ -1,4 +1,6 @@
 import React from 'react';
+import ChannelTabs from './channel_tabs_container';
+import { NavLink, Route, withRouter, Switch } from 'react-router-dom';
 
 class Channel extends React.Component {
 
@@ -18,15 +20,20 @@ class Channel extends React.Component {
         const { owner, channel, channelId } = this.props;
         return (
             <>
-                <div className="channel-show-header">
-                    <h2>{owner.username}</h2>
-                    <h2>{owner.email}</h2>
-                    <h2>{channel.name}</h2>
-                    <h2>{channel.description}</h2>
+                <div className="channel-content">
+                    <NavLink to={`/channel/${channelId}`}>HOME</NavLink>
+                    <NavLink to={`/channel/${channelId}/videos`}>VIDEOS</NavLink>
+                    <NavLink to={`/channel/${channelId}/about`}>ABOUT</NavLink>
+
+                    <Switch> 
+                        <Route exact path="/channel/:channelId/videos" component={ChannelTabs} />
+                        <Route exact path="/channel/:channelId/about" component={ChannelTabs} />
+                        <Route exact path="/channel/:channelId" component={ChannelTabs} />
+                    </Switch>
                 </div>
             </>
         )
     }
 }
 
-export default Channel;
+export default withRouter(Channel);
