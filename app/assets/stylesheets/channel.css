@@ -1,3 +1,49 @@
-.tab-headers {
+.channel-content {
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+}
+
+.channel-header {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 16px;
+    padding-left: 107px;
+    padding-right: 107px;
+    background: #FAFAFA;
+}
+
+.channel-header-detail {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.channel-header-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 47px;
+    color: rgb(96, 96, 96);
+}
+
+.channel-header-links a:hover {
+    color: rgb(10, 10, 10);
+}
+
+.channel-icon {
+    width: 80px;
+    height: 80px;
+    background: #F5501E;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    border-radius: 50%;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 45px;
+    margin-right: 24px;
 }

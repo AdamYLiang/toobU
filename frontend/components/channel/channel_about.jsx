@@ -4,7 +4,7 @@ class ChannelAbout extends React.Component {
     render() {
         const { owner, channel } = this.props;
         return (
-            <div class="channel-homepage-content">
+            <div className="channel-homepage-content">
                 {owner.username}
                 {owner.email}
                 {channel.name}

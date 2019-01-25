@@ -27,14 +27,19 @@ class Channel extends React.Component {
                 <div className="channel-content">
 
                     <div className="channel-header">
-                        <button>{ownerInitial}</button>
-                        <h2>{owner.username}</h2>
-                        <button>Customize Channel</button>
-                    </div>
+                        <div className="channel-header-detail">
+                            <button className="channel-icon">{ownerInitial}</button>
+                            <h2>{owner.username}</h2>
+                            <button>Customize Channel</button>
+                        </div>
+                        <div className="channel-header-links">
+                            <NavLink exact to={`/channel/${channelId}`}>HOME</NavLink>
+                            <NavLink to={`/channel/${channelId}/videos`}>VIDEOS</NavLink>
+                            <NavLink to={`/channel/${channelId}/about`}>ABOUT</NavLink>
 
-                    <NavLink to={`/channel/${channelId}`}>HOME</NavLink>
-                    <NavLink to={`/channel/${channelId}/videos`}>VIDEOS</NavLink>
-                    <NavLink to={`/channel/${channelId}/about`}>ABOUT</NavLink>
+                        </div>
+                    </div>
+                    
 
                     <Switch> 
                         <Route 
