@@ -22,12 +22,12 @@ const Auth = ({ loggedIn, path, component: Component }) => {
 };
 
 const CreateChannel = ({ loggedIn, users, currentUser, path, component: Component}) => {
-    const user = users[currentUser.id].ownChannels || [];
     return (
         <Route
             path={path}
             render={props => {
                 if(loggedIn) {
+                    const user = users[currentUser.id].ownChannels || [];
                     if(user.length !== 0){
                         return <Redirect to={`/channel/${users[currentUser.id].ownChannels[0]}`} />
                     } else {
