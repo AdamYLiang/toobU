@@ -47,6 +47,7 @@ class ChannelForm extends React.Component{
             <div className="create-channel-background">
                 <div className="create-channel-overlay-form">
                     <h2>Create Form</h2>
+                    {this.renderErrors()}
                     <form onSubmit={this.handleSubmit}>
                         <label>
                             <input 
