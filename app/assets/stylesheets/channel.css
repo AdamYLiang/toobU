@@ -78,3 +78,13 @@
     background: rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
+
+.create-channel-overlay-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 313px;
+    background: white;
+}

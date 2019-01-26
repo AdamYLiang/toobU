@@ -1,18 +1,22 @@
 import { connect } from 'react-redux';
 import ChannelForm from './channel_form';
-import { createChannel } from '../../util/channel_api_util';
+import { createChannel } from '../../actions/channel_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
     return {
-
+        channel: { name: "", description: "" },
+        errors: state.errors.channel,
+        formType: 'create',
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+    const history = ownProps.history;
     return {
-        createChannel: (channel) => dispatch(createChannel(channel)),
+        submitForm: (channel) => dispatch(createChannel(channel, history)),
     };
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChannelForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelForm));
