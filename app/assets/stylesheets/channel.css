@@ -84,9 +84,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding-bottom: 20px;
     width: 480px;
-    height: 313px;
+    height: 280px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -94,8 +93,39 @@
 }
 
 .create-channel-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 232px;
+}
+
+.create-channel-form-input-header {
+    display: flex;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.create-channel-form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.channel-errors-list {
+    margin: 0 auto;
+    font-size: 12px;
+    color: rgb(213, 0, 0);
+}
+
+.create-channel-form-inputs input {
+    padding: 5px 10px 6px;
+    width: 250px;
+    font-size: 13px;
+    border: 1px solid #d3d3d3;
+    color: #333;
 }
 
 .create-channel-form-top{
@@ -103,7 +133,45 @@
     padding: 0 20px;
     color: #555;
     line-height: 60px;
-    border-bottom: 1px solid rgb(85, 85, 85);
+    border-bottom: 1px solid rgb(85, 85, 85, 0.2);
     width:100%;
     margin-bottom: 20px;
+}
+
+.create-channel-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 15px 20px;
+    border-top: 1px solid rgb(85, 85, 85, 0.2);
+    background: #F1F1F1;
+}
+
+.create-channel-form-buttons button {
+    padding: 0 10px;
+    height: 28px;
+    font-weight: 900;
+    border-radius: 2px;
+    font-size: 11px;
+    margin: 0 3px;
+    text-align: center;
+}
+
+.channel-create-button {
+    background: rgb(22, 122, 198);
+    color: white;
+}
+
+.channel-cancel-button {
+    background: rgb(248, 248, 248);
+    color: black;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.channel-create-button:hover {
+    background: #316DAE
+}
+
+.channel-cancel-button:hover {
+    background: #F0F0F0;
 }
