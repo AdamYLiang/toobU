@@ -46,9 +46,10 @@ class ChannelForm extends React.Component{
         return (
             <div className="create-channel-background">
                 <div className="create-channel-overlay-form">
-                    <h2>Create Form</h2>
-                    {this.renderErrors()}
-                    <form onSubmit={this.handleSubmit}>
+                    <h2 className="create-channel-form-top">Use toobU as...</h2>
+                    <form onSubmit={this.handleSubmit} className="create-channel-form">
+                        <div>
+                        <i className="far fa-user-circle fa-5x"></i>
                         <label>
                             <input 
                             type="text"
@@ -63,9 +64,13 @@ class ChannelForm extends React.Component{
                                 onChange={this.update('description')}
                                 placeholder="Name" />
                         </label>
-                        <button type="submit">Submit</button>
+                        </div>
+                        {this.renderErrors()}
+                        <div className="create-channel-form-buttons">
+                            <button onClick={this.cancelSubmission.bind(this)}>Cancel</button>
+                            <button type="submit">Create Channel</button>
+                        </div>
                     </form>
-                    <button onClick={this.cancelSubmission.bind(this)}>Cancel</button>
                 </div>
             </div>
         );
