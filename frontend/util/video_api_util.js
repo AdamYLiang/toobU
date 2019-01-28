@@ -16,7 +16,9 @@ export const createVideo = (video) => {
     return $.ajax({
         method: 'POST',
         url: '/api/videos',
-        data: { video }
+        data: video,
+        contentType: false,
+        processData: false,
     });
 };
 

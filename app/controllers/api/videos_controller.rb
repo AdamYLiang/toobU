@@ -1,8 +1,9 @@
 class Api::VideosController < ApplicationController
 
     def create
-        @video = current_user.channels.first.new(video_params)
-        if ((params[:video][:thumbnail] && params[:video][:video]) &&
+        @video = current_user.channels.first.videos.new(video_params)
+        debugger
+        if ((params[:video][:thumbnail] && params[:video][:file]) &&
             (params[:video][:thumbnail] != '' && params[:video][:file] != ''))
             if @video.save
                 render :show

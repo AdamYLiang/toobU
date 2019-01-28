@@ -22,6 +22,15 @@ const Auth = ({ loggedIn, path, component: Component }) => {
     );
 };
 
+const Protected = ({ loggedIn, path, component: Component }) => (
+    <Route
+        path={path}
+        render={props => (
+            loggedIn ? <Component {...props} /> : <Redirect to="/login" />
+        )}
+    />
+);
+
 const CreateChannel = ({ loggedIn, users, currentUser, path, component: Component}) => {
     return (
         <Route
@@ -67,5 +76,6 @@ const EditChannel = ({ loggedIn, users, channels, currentUser, path, location, c
 };
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
+export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
 export const CreateChannelRoute = withRouter(connect(mapStateToProps)(CreateChannel));
 export const EditChannelRoute = withRouter(connect(mapStateToProps)(EditChannel))

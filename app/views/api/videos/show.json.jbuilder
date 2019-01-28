@@ -1,5 +1,7 @@
 json.video do 
     json.extract! @video, :id, :title, :description
+    json.videoURL @video.file.service_url
+    json.thumbURL @video.thumbnail.service_url
 end
 
 json.channel do
