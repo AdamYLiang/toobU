@@ -1,6 +1,7 @@
 import {
     RECEIVE_CHANNEL,
     RECEIVE_CHANNEL_ERRORS,
+    RECEIVE_BLANK_CHANNEL_ERRORS,
 } from '../../actions/channel_actions';
 
 const channelErrorsReducer = (state = [], action) => {
@@ -10,6 +11,8 @@ const channelErrorsReducer = (state = [], action) => {
             return [];
         case RECEIVE_CHANNEL_ERRORS:
             return action.errors;
+        case RECEIVE_BLANK_CHANNEL_ERRORS:
+            return [];
         default:
             return state;
     }

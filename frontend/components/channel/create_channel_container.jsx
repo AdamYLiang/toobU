@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ChannelForm from './channel_form';
-import { createChannel } from '../../actions/channel_actions';
+import { createChannel, clearChannelErrors } from '../../actions/channel_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
@@ -15,6 +15,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     const history = ownProps.history;
     return {
         submitForm: (channel) => dispatch(createChannel(channel, history)),
+        clearErrors: () => dispatch(clearChannelErrors()),
     };
 };
 

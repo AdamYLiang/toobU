@@ -35,6 +35,7 @@ class ChannelForm extends React.Component{
     }
 
     componentDidMount() {
+        this.props.clearErrors();
         document.body.style.overflow = "hidden";
     }
 
@@ -69,6 +70,8 @@ class ChannelForm extends React.Component{
                                 </label>
                             </div>
                         </div>
+
+                        {/* CLEAR ERRORS ON FORM COMPONENT MOUNTING  */}
 
                         {this.renderErrors()}
 
