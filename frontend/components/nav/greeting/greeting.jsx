@@ -65,6 +65,7 @@ class Greeting extends React.Component {
             }
             return (
                 <section className='login-signup-nav'>
+                    <Link to="/upload"><i className="fas fa-upload fa-lg"></i></Link>
                     <button 
                     onClick={this.showMenu} 
                     className="username-button">
