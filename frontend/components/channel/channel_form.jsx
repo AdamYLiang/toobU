@@ -3,22 +3,21 @@ import React from 'react';
 class ChannelForm extends React.Component{
     constructor(props) {
         super(props);
-        this.state = this.props.channel;
+        this.state = { name: this.props.channel.name, description: this.props.channel.description, isSubmitDisabled: false };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('name', this.state.name);
-        formData.append('description', this.state.description);
-        formData.append('id', this.props.match.params.channelId);
-        this.props.submitForm(this.state);
+        if (this.state.name !== "") {
+            this.setState({ isSubmitDisabled: true });
+        }
+        this.props.submitForm(this.state);   
     }
 
     update(field) {
         return (e) => {
-            this.setState({ [field]: e.target.value });
+            this.setState( {[field]: e.target.value });
         };
     }
 
@@ -40,7 +39,7 @@ class ChannelForm extends React.Component{
 
     componentDidMount() {
         this.props.clearErrors();
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";        
     }
 
     componentWillUnmount() {
@@ -81,7 +80,8 @@ class ChannelForm extends React.Component{
                             <section className="channel-cancel-button" onClick={this.cancelSubmission.bind(this)}>CANCEL</section>
                             <button 
                             className="channel-create-button" 
-                            type="submit">
+                            type="submit"
+                            disabled={this.state.isSubmitDisabled} >
                             {this.props.formType === 'create' ? 'CREATE CHANNEL' : 'UPDATE CHANNEL'}</button>
                         </div>
                     </form>

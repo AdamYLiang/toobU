@@ -40,6 +40,10 @@
     padding: 0 32px;
 }
 
+.channel-header-links .selected {
+    border-bottom: 4px solid #606060;
+}
+
 .channel-header-links a:hover {
     color: rgb(10, 10, 10);
 }
@@ -56,6 +60,7 @@
     margin-right: 8px;
     font-size: 45px;
     margin-right: 24px;
+    cursor: default;
 }
 
 .customize-channel-button {
@@ -175,6 +180,7 @@
     vertical-align: middle;
     background: rgb(248, 248, 248);
     color: black;
+    cursor: pointer;
     border: 1px solid rgb(211, 211, 211);
 }
 

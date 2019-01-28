@@ -20,8 +20,11 @@ class Channel extends React.Component {
     }
 
     render () {
-        const { owner, channel, channelId } = this.props;
+        const { owner, channel, currentUser, channelId } = this.props;
         const ownerInitial = owner.username ? owner.username.slice(0, 1).toUpperCase() : "";
+        const customizeButton = owner.id === currentUser.id ? 
+                                <Link className="customize-channel-button" to={`/channel/${channelId}/edit`}>CUSTOMIZE CHANNEL</Link>
+                                : <></>;
         return (
             <>
                 <div className="channel-content">
@@ -30,15 +33,12 @@ class Channel extends React.Component {
                         <div className="channel-header-detail">
                             <button className="channel-icon">{ownerInitial}</button>
                             <h2>{owner.username}</h2>
-                            <Link 
-                            className="customize-channel-button"
-                            to={`/channel/${channelId}/edit`}
-                            >CUSTOMIZE CHANNEL</Link>
+                            {customizeButton}
                         </div>
                         <div className="channel-header-links">
-                            <NavLink exact to={`/channel/${channelId}`}>HOME</NavLink>
-                            <NavLink to={`/channel/${channelId}/videos`}>VIDEOS</NavLink>
-                            <NavLink to={`/channel/${channelId}/about`}>ABOUT</NavLink>
+                            <NavLink exact to={`/channel/${channelId}`} activeClassName="selected">HOME</NavLink>
+                            <NavLink to={`/channel/${channelId}/videos`} activeClassName="selected">VIDEOS</NavLink>
+                            <NavLink to={`/channel/${channelId}/about`} activeClassName="selected">ABOUT</NavLink>
 
                         </div>
                     </div>

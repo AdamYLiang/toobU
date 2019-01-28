@@ -18,4 +18,4 @@ const channelErrorsReducer = (state = [], action) => {
     }
 };
 
-export default channelErrorsReducer;
+export default channelErrorsReducer; 

@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return ({
         loggedIn: Boolean(state.session.currentUser),
         users: state.entities.users,
+        channels: state.entities.channels,
         currentUser: state.session.currentUser,
     });
 };
@@ -41,5 +42,26 @@ const CreateChannel = ({ loggedIn, users, currentUser, path, component: Componen
     );
 };
 
+const EditChannel = ({ loggedIn, users, channels, currentUser, path, location, component: Component}) => {
+    return (
+        <Route
+            path={path}
+            render={props => {
+                if(loggedIn) {
+                    const user = users[currentUser.id] || {};
+                    if(location.pathname === `/channel/${user.ownChannels[0]}/edit`){
+                        return <Component {...props} />
+                    } else {
+                        return <Redirect to={`/channel/${user.ownChannels[0]}`} />
+                    }
+                } else {
+                    return <Redirect to="/login" />
+                }
+            }}
+        />
+    );
+};
+
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const CreateChannelRoute = withRouter(connect(mapStateToProps)(CreateChannel));
+export const EditChannelRoute = withRouter(connect(mapStateToProps)(EditChannel))
