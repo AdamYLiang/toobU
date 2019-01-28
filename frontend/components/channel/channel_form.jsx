@@ -71,8 +71,6 @@ class ChannelForm extends React.Component{
                             </div>
                         </div>
 
-                        {/* CLEAR ERRORS ON FORM COMPONENT MOUNTING  */}
-
                         {this.renderErrors()}
 
                         <div className="create-channel-form-buttons">

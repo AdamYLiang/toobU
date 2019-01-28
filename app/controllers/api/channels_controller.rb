@@ -25,6 +25,8 @@ class Api::ChannelsController < ApplicationController
         @channel = Channel.find(params[:id])
         if @channel && @channel.user_id == current_user.id && @channel.update(channel_params)
             render :show
+        elsif @channel && @channel.user_id != current_user.id
+            render json: ["You are not the channel owner"], status: 400
         else
             render json: @channel.errors.full_messages, status: 400
         end
