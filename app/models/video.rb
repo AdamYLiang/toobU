@@ -15,4 +15,7 @@ class Video < ApplicationRecord
     validates_presence_of :title 
 
     belongs_to :channel
+
+    has_one_attached :file
+    has_one_attached :thumbnail
 end
