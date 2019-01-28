@@ -2,6 +2,16 @@ class Api::VideosController < ApplicationController
 
     def create
         @video = current_user.channels.first.new(video_params)
+        if ((params[:video][:thumbnail] && params[:video][:video]) &&
+            (params[:video][:thumbnail] != '' && params[:video][:file] != ''))
+            if @video.save
+                render :show
+            else
+                render json: @video.errors.full_messages, status: 400
+            end
+        else   
+            render json: ["Need video and thumbnail file"]
+        end
     end
 
     def show
@@ -25,7 +35,7 @@ class Api::VideosController < ApplicationController
 
     private
     def video_params 
-        params.require(:video).permit(:title, :description, :user_id, :likes)
+        params.require(:video).permit(:title, :description, :channel_id, :file, :thumbnail, :url)
     end
     
 end

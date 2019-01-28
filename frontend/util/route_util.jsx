@@ -49,10 +49,14 @@ const EditChannel = ({ loggedIn, users, channels, currentUser, path, location, c
             render={props => {
                 if(loggedIn) {
                     const user = users[currentUser.id] || {};
-                    if(location.pathname === `/channel/${user.ownChannels[0]}/edit`){
+                    const ownChannel = user.ownChannels || [];
+                    if( ownChannel.length === 0){
+                        return <Redirect to={`/create_channel`} />
+                    }
+                    else if(location.pathname === `/channel/${ownChannel[0]}/edit`){
                         return <Component {...props} />
                     } else {
-                        return <Redirect to={`/channel/${user.ownChannels[0]}`} />
+                        return <Redirect to={`/channel/${ownChannel[0]}`} />
                     }
                 } else {
                     return <Redirect to="/login" />
