@@ -9,6 +9,10 @@ class ChannelForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        const formData = new FormData();
+        formData.append('name', this.state.name);
+        formData.append('description', this.state.description);
+        formData.append('id', this.props.match.params.channelId);
         this.props.submitForm(this.state);
     }
 
@@ -19,7 +23,7 @@ class ChannelForm extends React.Component{
     }
 
     cancelSubmission() {
-        this.props.history.push(`/`);
+        this.props.formType === 'create' ? this.props.history.push(`/`) : this.props.history.push(`/channel/${this.props.match.params.channelId}`);
     }
 
     renderErrors() {
@@ -74,8 +78,11 @@ class ChannelForm extends React.Component{
                         {this.renderErrors()}
 
                         <div className="create-channel-form-buttons">
-                            <button className="channel-cancel-button" onClick={this.cancelSubmission.bind(this)}>CANCEL</button>
-                            <button className="channel-create-button" type="submit">CREATE CHANNEL</button>
+                            <section className="channel-cancel-button" onClick={this.cancelSubmission.bind(this)}>CANCEL</section>
+                            <button 
+                            className="channel-create-button" 
+                            type="submit">
+                            {this.props.formType === 'create' ? 'CREATE CHANNEL' : 'UPDATE CHANNEL'}</button>
                         </div>
                     </form>
                 </div>

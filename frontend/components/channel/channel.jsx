@@ -3,7 +3,7 @@ import ChannelTab from './channel_tabs';
 import Homepage from './channel_homepage';
 import VideosPage from './channel_videos';
 import AboutPage from './channel_about';
-import { NavLink, Route, withRouter, Switch } from 'react-router-dom';
+import { NavLink, Route, withRouter, Switch, Link } from 'react-router-dom';
 
 class Channel extends React.Component {
 
@@ -30,7 +30,10 @@ class Channel extends React.Component {
                         <div className="channel-header-detail">
                             <button className="channel-icon">{ownerInitial}</button>
                             <h2>{owner.username}</h2>
-                            <button className="customize-channel-button">CUSTOMIZE CHANNEL</button>
+                            <Link 
+                            className="customize-channel-button"
+                            to={`/channel/${channelId}/edit`}
+                            >CUSTOMIZE CHANNEL</Link>
                         </div>
                         <div className="channel-header-links">
                             <NavLink exact to={`/channel/${channelId}`}>HOME</NavLink>

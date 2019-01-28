@@ -5,18 +5,20 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     const defaultChannel = { name: "", description: ""};
-    const channel = state.channels[ownProps.match.params.channelId] || defaultChannel;
+    const channel = state.entities.channels[ownProps.match.params.channelId] || defaultChannel;
     return {
         channel: channel,
+        errors: state.errors.channel,
         formType: 'update',
     };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+    const channelId = ownProps.match.params.channelId;
     const history = ownProps.history;
     return {
         fetchChannel: (id) => dispatch(fetchChannel(id)),
-        submitForm: (channel) => dispatch(updateChannel(channel, history)),
+        submitForm: (channel) => dispatch(updateChannel(channel, channelId, history)),
         clearErrors: () => dispatch(clearChannelErrors()),
     };
 };

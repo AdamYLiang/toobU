@@ -20,10 +20,10 @@ export const createChannel = (channel) => {
     });
 };
 
-export const updateChannel = (channel) => {
+export const updateChannel = (channel, channelId) => {
     return $.ajax({
         method: 'PATCH',
-        url: `/api/channels/${channel.id}`,
+        url: `/api/channels/${channelId}`,
         data: { channel }
     });
 };

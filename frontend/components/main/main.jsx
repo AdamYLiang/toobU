@@ -4,6 +4,7 @@ import NavContainer from '../nav/nav_container';
 import HomeContainer from '../home/home_container';
 import ChannelContainer from '../channel/channel_container';
 import CreateChannelContainer from '../channel/create_channel_container';
+import EditChannelContainer from '../channel/edit_channel_container';
 import { AuthRoute, CreateChannelRoute } from '../../util/route_util';
 
 class Main extends React.Component {
@@ -19,6 +20,7 @@ class Main extends React.Component {
             <div id="main-content">
                 <Switch>
                     <CreateChannelRoute path="/create_channel" component={CreateChannelContainer} />
+                    <Route path="/channel/:channelId/edit" component={EditChannelContainer} />
                     <Route path="/channel/:channelId" component={ChannelContainer}/>
                     <Route path="/" component={HomeContainer} />
                 </Switch>
