@@ -22,9 +22,24 @@ class VideoShow extends React.Component {
 
                         <div className="video-detail-user">
                             <UserIcon type="uploader-icon" currentUser={owner} />
-                            <h1>{owner.username}</h1>
-                            <h2>{video.description}</h2>
+                            <div className="video-detail-detail">
+                                <h1>{owner.username}</h1>
+                                <h2>{video.description}</h2>
+                            </div>
                         </div>
+                    </div>
+                    <div className="comments">
+                        <h1>COMMENTS HERE</h1>
+                        <h1>COMMENTS HERE</h1>
+                        <h1>COMMENTS HERE</h1>
+                        <h1>COMMENTS HERE</h1>
+                        <h1>COMMENTS HERE</h1>
+                        <h1>COMMENTS HERE</h1>
+                        <h1>COMMENTS HERE</h1>
+                        <h1>COMMENTS HERE</h1>
+                        <h1>COMMENTS HERE</h1>
+
+                        {/* fix comment css */}
                     </div>
                 </div>
             </>
