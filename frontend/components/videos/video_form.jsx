@@ -56,47 +56,59 @@ class VideoForm extends React.Component {
         return (e) => {
             this.setState({ [field]: e.target.value });
         };
-    }
+    } 
 
     render() {
-        const uploadDetails = this.state.file ? 
-            (<>
-                <input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) => this.readThumb(e)}
-                    onClick={(e) => event.target.value = null}
-                />
-
+        const uploadDetails = this.state.file && this.state.thumbnail ? 
+            (<div className="upload-form-details">
                 <input
                     type="text"
                     value={this.state.title}
                     onChange={this.update('title')}
                     placeholder="Title" />
 
-                <input
+                <textarea
                     type="text"
                     value={this.state.description}
                     onChange={this.update('description')}
                     placeholder="Description" />
-
-                <button type="submit" disabled={this.state.isUploadDisabled}>{this.state.isUploadDisabled ? "UPLOADING" : "UPLOAD"}</button>
-            </>) : "";
-
+                <button className="upload-button" type="submit" disabled={this.state.isUploadDisabled}>{this.state.isUploadDisabled ? "UPLOADING" : "UPLOAD"}</button>
+            </div>) : "";
         return (
             <>
                 <div className="upload-form-content">
                     <form onSubmit={this.handleSubmit} className="upload-form">
-                        <div className="video-upload-container">
-                            <label htmlFor="video-upload-field">
-                                <input 
+                        <div className="upload-files-content">
+                            <div className="video-upload-container">
+                                <label htmlFor="video-upload-field" className="video-upload-picture">
+                                    <div className="actual-file-upload">
+                                        {this.state.file ? <h1>{this.state.file.name}</h1> : <i class="fas fa-file-upload fa-5x"></i>}
+                                    </div>
+                                </label>
+                                {this.state.file ? "" : <h1>Select file to upload</h1>}
+                                <input
                                 id="video-upload-field"
                                 type="file"
                                 accept="video/*"
                                 onChange={(e) => this.readVideo(e)}
                                 onClick={(e) => event.target.value = null}
                                 />
-                            </label>
+                            </div>
+                            <div className="thumbnail-upload-container">
+                                <label htmlFor="thumbnail-upload-field" className="thumbnail-upload-picture">
+                                    <div className="actual-file-upload">
+                                        {this.state.thumbnail ? <h1>{this.state.thumbnail.name}</h1> : <i class="fas fa-file-upload fa-5x"></i>}
+                                    </div>
+                                </label>
+                                {this.state.thumbnail ? "" : <h1>Select thumbnail to upload</h1>}
+                                <input
+                                    id="thumbnail-upload-field"
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={(e) => this.readThumb(e)}
+                                    onClick={(e) => event.target.value = null}
+                                />
+                            </div>
                         </div>
 
                         {uploadDetails}
