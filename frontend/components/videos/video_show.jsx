@@ -13,7 +13,9 @@ class VideoShow extends React.Component {
             <>
                 <div className="video-show-column">
                     <VideoPlayer src={video.videoURL} />
-                    <h1>THIS IS THE AMAZING VIDEO</h1>
+                    <h1>{video.title}</h1>
+                    <h1>{owner.username}</h1>
+                    <h2>{video.description}</h2>
                 </div>
             </>
         )

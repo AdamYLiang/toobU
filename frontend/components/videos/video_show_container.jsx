@@ -13,7 +13,6 @@ const mapStateToProps = (state, ownProps) => {
         owner = state.entities.users[channel.userId] || {};
     }
 
-    debugger
     return {
         video,
         videoId,

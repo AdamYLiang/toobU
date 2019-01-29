@@ -7,9 +7,8 @@ class VideoPlayer extends React.Component {
             <>
                 <div className="video-player-content">
                     <video 
+                    className="video-player"
                     controls 
-                    height="720"
-                    width="1280"
                     src={this.props.src}
                     >
                     </video>

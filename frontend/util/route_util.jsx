@@ -31,14 +31,33 @@ const Protected = ({ loggedIn, path, component: Component }) => (
     />
 );
 
+const ChannelExist = ({ loggedIn, path, currentUser, users, component: Component }) => (
+    <Route
+        path={path}
+        render={props => {
+                if(loggedIn) {
+                    const channels = users[currentUser.id].ownChannels || [];
+                    if(channels.length === 0) {
+                        return <Redirect to="/create_channel" />
+                    } else {
+                        return <Component {...props} />
+                    }
+                } else {
+                    return <Redirect to="/login" />
+                }
+            }
+        }
+    />
+);
+
 const CreateChannel = ({ loggedIn, users, currentUser, path, component: Component}) => {
     return (
         <Route
             path={path}
             render={props => {
                 if(loggedIn) {
-                    const user = users[currentUser.id].ownChannels || [];
-                    if(user.length !== 0){
+                    const channels = users[currentUser.id].ownChannels || [];
+                    if(channels.length !== 0){
                         return <Redirect to={`/channel/${users[currentUser.id].ownChannels[0]}`} />
                     } else {
                         return <Component {...props} />
@@ -78,4 +97,5 @@ const EditChannel = ({ loggedIn, users, channels, currentUser, path, location, c
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
 export const CreateChannelRoute = withRouter(connect(mapStateToProps)(CreateChannel));
-export const EditChannelRoute = withRouter(connect(mapStateToProps)(EditChannel))
+export const EditChannelRoute = withRouter(connect(mapStateToProps)(EditChannel));
+export const ChannelExistsRoute = withRouter(connect(mapStateToProps)(ChannelExist));
