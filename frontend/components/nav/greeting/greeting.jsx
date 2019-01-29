@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserIcon from '../../main/user_icon';
 
 class Greeting extends React.Component {
     constructor(props){

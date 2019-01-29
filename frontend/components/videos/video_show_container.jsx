@@ -5,7 +5,7 @@ import { fetchVideo } from '../../actions/video_actions';
 const mapStateToProps = (state, ownProps) => {
     const videoId = ownProps.match.params.videoId;
     const video = state.entities.videos[videoId] || {};
-    let owner = {};
+    let owner;
     let channel = {};
     let currentUser = state.session.currentUser || {};
     if (video) {

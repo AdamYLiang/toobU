@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoPlayer from './video_player';
+import UserIcon from '../main/user_icon';
 
 class VideoShow extends React.Component {
 
@@ -13,9 +14,18 @@ class VideoShow extends React.Component {
             <>
                 <div className="video-show-column">
                     <VideoPlayer src={video.videoURL} />
-                    <h1>{video.title}</h1>
-                    <h1>{owner.username}</h1>
-                    <h2>{video.description}</h2>
+                    <div className="video-detail-container">
+                        <div className="video-detail-title">
+                            <h1>{video.title}</h1>
+                            <h2 className="views">999 views</h2>
+                        </div>
+
+                        <div className="video-detail-user">
+                            <UserIcon type="uploader-icon" currentUser={owner} />
+                            <h1>{owner.username}</h1>
+                            <h2>{video.description}</h2>
+                        </div>
+                    </div>
                 </div>
             </>
         )
