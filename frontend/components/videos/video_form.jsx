@@ -4,9 +4,11 @@ class VideoForm extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.video;
+        this.state.isUploadDisabled = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.readVideo = this.readVideo.bind(this);
         this.readThumb = this.readThumb.bind(this);
+        this.enableSubmit = this.enableSubmit.bind(this);
     }
 
     handleSubmit(e) {
@@ -18,7 +20,12 @@ class VideoForm extends React.Component {
             formData.append('video[file]', this.state.file);
             formData.append('video[thumbnail', this.state.thumbnail);
         }
-        this.props.submitForm(formData);
+        this.setState({ isUploadDisabled: true }); //SET IT SO WHEN UPLOADING ITS GG 
+        this.props.submitForm(formData, this.enableSubmit);
+    }
+
+    enableSubmit() {
+        this.setState({ isUploadDisabled: false });
     }
 
     readVideo(e) {
@@ -52,38 +59,49 @@ class VideoForm extends React.Component {
     }
 
     render() {
-        return (
-            <>
-                <h1>UPLOAD VIDEOS HERE</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <input 
-                    type="file"
-                    accept="video/*"
-                    onChange={(e) => this.readVideo(e)}
-                    onClick={(e) => event.target.value = null}
-                    />
-
-                    <input 
+        const uploadDetails = this.state.file ? 
+            (<>
+                <input
                     type="file"
                     accept="image/*"
                     onChange={(e) => this.readThumb(e)}
                     onClick={(e) => event.target.value = null}
-                    />
+                />
 
-                    <input 
+                <input
                     type="text"
                     value={this.state.title}
                     onChange={this.update('title')}
-                    placeholder="Title"/>
+                    placeholder="Title" />
 
-                    <input 
+                <input
                     type="text"
                     value={this.state.description}
                     onChange={this.update('description')}
-                    placeholder="Description"/>
-                    
-                    <button type="submit">Upload</button>
-                </form>
+                    placeholder="Description" />
+
+                <button type="submit" disabled={this.state.isUploadDisabled}>{this.state.isUploadDisabled ? "UPLOADING" : "UPLOAD"}</button>
+            </>) : "";
+
+        return (
+            <>
+                <div className="upload-form-content">
+                    <form onSubmit={this.handleSubmit} className="upload-form">
+                        <div className="video-upload-container">
+                            <label htmlFor="video-upload-field">
+                                <input 
+                                id="video-upload-field"
+                                type="file"
+                                accept="video/*"
+                                onChange={(e) => this.readVideo(e)}
+                                onClick={(e) => event.target.value = null}
+                                />
+                            </label>
+                        </div>
+
+                        {uploadDetails}
+                    </form>
+                </div>
             </>
         )
     }

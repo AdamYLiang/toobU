@@ -16,8 +16,10 @@
 
 .channel-header-detail {
     display: flex;
-    align-items: center;
+    height: 100%;
+    max-width: 1284px;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .channel-header-detail h2 {
@@ -41,6 +43,7 @@
 }
 
 .channel-header-links .selected {
+    color: black;
     border-bottom: 4px solid #606060;
 }
 
@@ -71,6 +74,7 @@
     font-size: 14px;
     font-weight: 500px;
     border-radius: 2px;
+    margin-left: auto;
 }
 
 .create-channel-background {

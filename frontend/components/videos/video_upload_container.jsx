@@ -14,7 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     const history = ownProps.history;
     return {
-        submitForm: (video) => dispatch(createVideo(video, history)),
+        submitForm: (video, enableSubmit) => dispatch(createVideo(video, enableSubmit, history)),
     };
 };
 

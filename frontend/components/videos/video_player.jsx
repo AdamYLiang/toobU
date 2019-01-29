@@ -9,6 +9,7 @@ class VideoPlayer extends React.Component {
                     <video 
                     className="video-player"
                     controls 
+                    autoPlay
                     src={this.props.src}
                     >
                     </video>
