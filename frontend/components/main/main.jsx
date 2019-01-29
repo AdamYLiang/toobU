@@ -6,13 +6,10 @@ import ChannelContainer from '../channel/channel_container';
 import CreateChannelContainer from '../channel/create_channel_container';
 import EditChannelContainer from '../channel/edit_channel_container';
 import VideoUploadContainer from '../videos/video_upload_container';
+import VideoShowContainer from '../videos/video_show_container';
 import { ProtectedRoute, CreateChannelRoute, EditChannelRoute } from '../../util/route_util';
 
 class Main extends React.Component {
-
-    componentDidMount(){
-        // this.props.fetchChannels();
-    }
 
     render() {
         return (
@@ -23,6 +20,7 @@ class Main extends React.Component {
                     <CreateChannelRoute path="/create_channel" component={CreateChannelContainer} />
                     <EditChannelRoute path="/channel/:channelId/edit" component={EditChannelContainer} />
                     <ProtectedRoute path="/upload" component={VideoUploadContainer} />
+                    <Route path="/videos/:videoId" component={VideoShowContainer} />
                     <Route path="/channel/:channelId" component={ChannelContainer}/>
                     <Route path="/" component={HomeContainer} />
                 </Switch>

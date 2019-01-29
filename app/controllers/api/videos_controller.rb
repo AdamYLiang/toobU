@@ -2,7 +2,6 @@ class Api::VideosController < ApplicationController
 
     def create
         @video = current_user.channels.first.videos.new(video_params)
-        debugger
         if ((params[:video][:thumbnail] && params[:video][:file]) &&
             (params[:video][:thumbnail] != '' && params[:video][:file] != ''))
             if @video.save
@@ -11,7 +10,7 @@ class Api::VideosController < ApplicationController
                 render json: @video.errors.full_messages, status: 400
             end
         else   
-            render json: ["Need video and thumbnail file"]
+            render json: ["Need video and thumbnail file"], status: 422
         end
     end
 

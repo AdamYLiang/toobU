@@ -37,11 +37,12 @@ export const fetchVideos = () => dispatch => VideoApiUtil.fetchVideos()
 export const fetchVideo = (id) => dispatch => VideoApiUtil.fetchVideo(id) 
     .then(payload => dispatch(receiveVideo(payload)));
 
-export const createVideo = (video) => dispatch => {
+export const createVideo = (video, history) => dispatch => {
     return (
         VideoApiUtil.createVideo(video)
             .then(payload => {
                 dispatch(receiveVideo(payload));
+                history.push(`/videos/${payload.video.id}`);
             },
                 err => dispatch(receiveErrors(err.responseJSON))
             )

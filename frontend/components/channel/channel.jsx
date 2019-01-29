@@ -1,5 +1,4 @@
 import React from 'react';
-import ChannelTab from './channel_tabs';
 import Homepage from './channel_homepage';
 import VideosPage from './channel_videos';
 import AboutPage from './channel_about';

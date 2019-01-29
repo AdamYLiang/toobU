@@ -12,9 +12,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    // const history = ownProps.history;
+    const history = ownProps.history;
     return {
-        submitForm: (video) => dispatch(createVideo(video)),
+        submitForm: (video) => dispatch(createVideo(video, history)),
     };
 };
 
