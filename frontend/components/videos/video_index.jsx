@@ -1,5 +1,7 @@
 import React from 'react';
 import VideoList from './video_list';
+import { Link } from 'react-router-dom';
+import UserIcon from '../main/user_icon';
 
 class VideoIndex extends React.Component {
 
@@ -14,8 +16,17 @@ class VideoIndex extends React.Component {
                             channelIndex.map((channel, idx) => {
                                 return (
                                 <div key={idx} className="single-channel-list">
+                                    <div className="channel-detail">
+                                        <Link 
+                                        to={`/channel/${channel.id}`}>
+                                            <UserIcon currentUser={users[channel.userId]} type="channel-and-nav-icon" />
+                                        </Link>
+                                        <Link 
+                                        to={`/channel/${channel.id}`}>
+                                            <h1 className="channel-title">{channel.name}</h1>
+                                        </Link>
+                                    </div>
                                     <VideoList 
-                                    channel={channel} 
                                     videos={videos} 
                                     channelVids={channel.videoIds} 
                                     author={users[channel.userId]}

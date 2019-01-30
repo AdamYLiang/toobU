@@ -195,3 +195,12 @@
 .channel-cancel-button:hover {
     background: #F0F0F0;
 }
+
+.channel-videos-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-homepage-content {
+    padding: 0 65px;
+}

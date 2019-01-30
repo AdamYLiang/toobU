@@ -6,12 +6,15 @@ class ChannelVideos extends React.Component {
         const { videos, owner, channel } = this.props;
         return (
             <div className="channel-homepage-content">
-                <VideoList 
-                channel={channel}
-                videos={videos}
-                channelVids={channel.videoIds}
-                author={owner}
-                />
+                <div className="channel-videos-content">
+                    <h1>Uploads</h1>
+                    <VideoList 
+                    channel={channel}
+                    videos={videos}
+                    channelVids={channel.videoIds}
+                    author={owner}
+                    />
+                </div>
             </div>
         );
     }
