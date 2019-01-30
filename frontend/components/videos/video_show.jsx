@@ -21,11 +21,11 @@ class VideoShow extends React.Component {
                         </div>
 
                         <div className="video-detail-user">
-                            <UserIcon type="uploader-icon" currentUser={owner} />
                             <div className="video-detail-detail">
-                                <h1>{owner.username}</h1>
-                                <h2>{video.description}</h2>
+                                <UserIcon type="uploader-icon" currentUser={owner} />
+                                <h1 className="uploader-name">{owner.username}</h1>
                             </div>
+                            <h2>{video.description}</h2>
                         </div>
                     </div>
                     <div className="comments">

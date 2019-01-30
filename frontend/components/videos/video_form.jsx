@@ -82,7 +82,7 @@ class VideoForm extends React.Component {
                             <div className="video-upload-container">
                                 <label htmlFor="video-upload-field" className="video-upload-picture">
                                     <div className="actual-file-upload">
-                                        {this.state.file ? <h1>{this.state.file.name}</h1> : <i class="fas fa-file-upload fa-5x"></i>}
+                                        {this.state.file ? <h1>{this.state.file.name}</h1> : <i className="fas fa-file-upload fa-5x"></i>}
                                     </div>
                                 </label>
                                 {this.state.file ? "" : <h1>Select file to upload</h1>}
@@ -97,7 +97,7 @@ class VideoForm extends React.Component {
                             <div className="thumbnail-upload-container">
                                 <label htmlFor="thumbnail-upload-field" className="thumbnail-upload-picture">
                                     <div className="actual-file-upload">
-                                        {this.state.thumbnail ? <h1>{this.state.thumbnail.name}</h1> : <i class="fas fa-file-upload fa-5x"></i>}
+                                        {this.state.thumbnail ? <h1>{this.state.thumbnail.name}</h1> : <i className="fas fa-file-upload fa-5x"></i>}
                                     </div>
                                 </label>
                                 {this.state.thumbnail ? "" : <h1>Select thumbnail to upload</h1>}

@@ -123,6 +123,7 @@
 
 .video-detail-user {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     padding-top: 16px;
     height: 252px;
@@ -130,12 +131,20 @@
 
 .video-detail-detail {
     display: flex;
-    flex-direction: column;
-    margin-left: 14px;
+    align-items: center;
+    width: 100%;
+    padding-top: 16px;
+    margin-bottom: 12px;
 }
 
-.video-detail-detail h1 {
-    margin-bottom: 16px;
+.uploader-name {
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.video-detail-user h2 {
+    margin-left: 64px;
 }
 
 .comments {
@@ -148,5 +157,5 @@
 }
 
 .comments h1 {
-    /* line-height: 100px; */
+    line-height: 100px;
 }

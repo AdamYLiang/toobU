@@ -3,10 +3,6 @@
     width: 100%;
 }
 
-#MainApp {
-    height: 100%;
-}
-
 #main-content {
     display: flex;
     position: relative;
@@ -27,8 +23,7 @@
     background: #F5501E;
     color: white;
     border-radius: 50%;
-    margin-left: 20px;
-    margin-right: 8px;
+    margin-right: 16px;
 }
 
 .commenter-icon {
