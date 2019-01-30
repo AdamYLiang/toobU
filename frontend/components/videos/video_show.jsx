@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoPlayer from './video_player';
 import UserIcon from '../main/user_icon';
+import { Link } from 'react-router-dom';
 
 class VideoShow extends React.Component {
 
@@ -23,7 +24,7 @@ class VideoShow extends React.Component {
                         <div className="video-detail-user">
                             <div className="video-detail-detail">
                                 <UserIcon type="uploader-icon" currentUser={owner} />
-                                <h1 className="uploader-name">{owner.username}</h1>
+                                <Link to={`/channel/${channel.id}`}><h1 className="uploader-name">{owner.username}</h1></Link>
                             </div>
                             <h2>{video.description}</h2>
                         </div>
