@@ -3,6 +3,7 @@ json.video do
     json.channelId @video.channel.id
     json.videoURL @video.file.service_url
     json.thumbURL @video.thumbnail.service_url
+    json.createdAt @video.created_at
 end
 
 json.channel do

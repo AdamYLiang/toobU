@@ -11,6 +11,7 @@ class VideoShow extends React.Component {
 
     render () {
         const { owner, channel, currentUser, video, videoId } = this.props;
+        debugger
         return (
             <>
                 <div className="video-show-column">
