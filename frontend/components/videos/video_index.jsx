@@ -13,9 +13,9 @@ class VideoIndex extends React.Component {
         const indexContent = channelIndex.length > 0 ? 
                             channelIndex.map((channel, idx) => {
                                 return (
-                                <div key={idx}>
+                                <div key={idx} className="single-channel-list">
                                     <VideoList 
-                                    title={channel.name} 
+                                    channel={channel} 
                                     videos={videos} 
                                     channelVids={channel.videoIds} 
                                     author={users[channel.userId]}
@@ -24,7 +24,7 @@ class VideoIndex extends React.Component {
                             }) : ""; 
         return(
             <>
-                <ul>
+                <ul className="channel-index-list">
                     {indexContent}
                 </ul>
             </>

@@ -26,6 +26,19 @@
     margin-right: 16px;
 }
 
+.channel-and-nav-icon {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background: #F5501E;
+    color: white;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
 .commenter-icon {
     font-size: 22px;
     display: flex;

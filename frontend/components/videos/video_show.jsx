@@ -7,6 +7,7 @@ class VideoShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchVideo(this.props.videoId);
+        window.scrollTo(0,0);
     }
 
     render () {

@@ -11,6 +11,10 @@ class VideoForm extends React.Component {
         this.enableSubmit = this.enableSubmit.bind(this);
     }
 
+    componentDidMount() {
+        window.scrollTo(0,0);
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -20,7 +24,7 @@ class VideoForm extends React.Component {
             formData.append('video[file]', this.state.file);
             formData.append('video[thumbnail', this.state.thumbnail);
         }
-        this.setState({ isUploadDisabled: true }); //SET IT SO WHEN UPLOADING ITS GG 
+        this.setState({ isUploadDisabled: true }); 
         this.props.submitForm(formData, this.enableSubmit);
     }
 

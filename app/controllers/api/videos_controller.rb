@@ -19,11 +19,6 @@ class Api::VideosController < ApplicationController
     end
 
     def index 
-        # if current_user
-        #     @videos = Video.where(channel_id: current_user.channnels.first.id)
-        # else
-        #     @videos = Video.all
-        # end
         @videos = Video.includes(:channel).limit(5)
     end
 
