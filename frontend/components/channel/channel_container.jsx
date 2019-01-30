@@ -7,16 +7,19 @@ const mapStateToProps = (state, ownProps) => {
     const channelId = ownProps.match.params.channelId;
     const channel = state.entities.channels[channelId] || {};
     let owner = {};
+    let videos = {};
     let currentUser = state.session.currentUser || {};
     
     if (channel) {
         owner = state.entities.users[channel.userId] || {};
+        videos = state.entities.videos || {};
     }
     return {
         owner,
         channel,
         channelId,
-        currentUser
+        currentUser,
+        videos
     };
 };
 

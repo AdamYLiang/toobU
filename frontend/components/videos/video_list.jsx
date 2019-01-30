@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 class VideoList extends React.Component {
     render() {
         const { channel, videos, channelVids, author } = this.props;
-        const videoList = channelVids.map((videoId, idx) => {
+        const videoList = channelVids ? channelVids.map((videoId, idx) => {
             return(
                 <div key={idx} className="single-video">
                     <VideoListItem 
@@ -15,7 +15,7 @@ class VideoList extends React.Component {
                     />
                 </div>
             )
-        });
+        }) : "";
 
         return (
             <>

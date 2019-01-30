@@ -1,11 +1,17 @@
 import React from 'react';
+import VideoList from '../videos/video_list';
 
 class ChannelVideos extends React.Component {
     render() {
-        const { owner, channel } = this.props;
+        const { videos, owner, channel } = this.props;
         return (
             <div className="channel-homepage-content">
-                VIDEOS HERE WOOOOO
+                <VideoList 
+                channel={channel}
+                videos={videos}
+                channelVids={channel.videoIds}
+                author={owner}
+                />
             </div>
         );
     }
