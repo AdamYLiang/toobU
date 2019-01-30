@@ -13,10 +13,11 @@ const receiveChannels = (channels) => {
     };
 };
 
-const receiveChannel = (channel) => {
+const receiveChannel = (payload) => {
+    debugger
     return {
         type: RECEIVE_CHANNEL,
-        channel
+        payload
     };
 };
 
@@ -40,14 +41,14 @@ export const fetchChannels = () => dispatch => ChannelApiUtil.fetchChannels()
     .then(channels => dispatch(receiveChannels(channels)));
 
 export const fetchChannel = (id) => dispatch => ChannelApiUtil.fetchChannel(id)
-    .then(channel => dispatch(receiveChannel(channel)));
+    .then(payload => dispatch(receiveChannel(payload)));
 
 export const createChannel = (channel, history) => dispatch => {
     return (
         ChannelApiUtil.createChannel(channel)
-            .then(channel => {
-                dispatch(receiveChannel(channel));
-                (history.push(`/channel/${channel.id}`));
+            .then(payload => {
+                dispatch(receiveChannel(payload));
+                (history.push(`/channel/${payload.channel.id}`));
             },
                 err => dispatch(receiveErrors(err.responseJSON))
         )

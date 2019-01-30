@@ -8,11 +8,10 @@ const mapStateToProps = (state, ownProps) => {
     const channel = state.entities.channels[channelId] || {};
     let owner = {};
     let currentUser = state.session.currentUser || {};
-
+    
     if (channel) {
         owner = state.entities.users[channel.userId] || {};
     }
-
     return {
         owner,
         channel,

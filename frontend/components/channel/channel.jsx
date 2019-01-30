@@ -7,14 +7,12 @@ import { NavLink, Route, withRouter, Switch, Link } from 'react-router-dom';
 class Channel extends React.Component {
 
     componentDidMount() {
-        this.props.fetchChannel(this.props.channelId)
-            .then((promise) => this.props.fetchUser(promise.channel.userId));
+        this.props.fetchChannel(this.props.channelId);
     }
     
     componentDidUpdate(oldProps) {
         if(oldProps.match.params.channelId != this.props.channelId) {
-            this.props.fetchChannel(this.props.channelId)
-                .then((promise) => this.props.fetchUser(promise.channel.userId));
+            this.props.fetchChannel(this.props.channelId);
         }
     }
 

@@ -1,4 +1,5 @@
 import { RECEIVE_VIDEO, RECEIVE_VIDEOS, REMOVE_VIDEO } from '../../actions/video_actions';
+import { RECEIVE_CHANNEL } from '../../actions/channel_actions';
 import { merge } from 'lodash';
 
 const videosReducer = (state = {}, action) => {
@@ -7,6 +8,7 @@ const videosReducer = (state = {}, action) => {
     switch(action.type){
         case RECEIVE_VIDEO:
             return merge({}, state, {[action.payload.video.id]: action.payload.video});
+        case RECEIVE_CHANNEL:
         case RECEIVE_VIDEOS:
             return merge({}, state, action.payload.videos);
         case REMOVE_VIDEO:
