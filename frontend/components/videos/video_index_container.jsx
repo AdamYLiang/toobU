@@ -3,12 +3,11 @@ import VideoIndex from './video_index';
 import { fetchVideos } from '../../actions/video_actions';
 
 const mapStateToProps = ({ entities: { users, channels, videos } }) => {
-    const videoIndex = Object.values(videos); 
-    debugger
+    const channelIndex = Object.values(channels); 
     return {
-        videos: videoIndex,
+        videos,
         users,
-        channels,
+        channels: channelIndex,
     };
 };
 

@@ -2,6 +2,8 @@ json.videos do
     @videos.each do |video| 
         json.set! video.id do 
             json.extract! video, :id, :title
+            json.thumbURL video.thumbnail.service_url
+            json.channelId video.channel.id
             json.createdAt video.created_at
         end
     end
