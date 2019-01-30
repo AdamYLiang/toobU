@@ -19,7 +19,7 @@ class Api::VideosController < ApplicationController
     end
 
     def index 
-        @videos = Video.includes(:channel).limit(5)
+        @videos = Video.includes(:channel).limit(10)
     end
 
     def update 
