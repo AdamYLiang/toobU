@@ -27,6 +27,13 @@ class Api::VideosController < ApplicationController
     end
 
     def destroy
+        @video = Video.find(params[:id])
+        if @video && current_user.id == @video.channel.user_id
+            @video.destroy
+            render json: { id: @video.id }
+        else
+            render json: ["Invalid video"], status: 422
+        end
     end
 
     private

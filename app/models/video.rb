@@ -15,6 +15,7 @@ class Video < ApplicationRecord
     validates_presence_of :title 
 
     belongs_to :channel
+    has_many :comments, dependent: :destroy
 
     has_one_attached :file
     has_one_attached :thumbnail
