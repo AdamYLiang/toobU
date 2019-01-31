@@ -17,7 +17,7 @@ class Api::CommentsController < ApplicationController
             @comment.user_id = current_user.id
             @user = current_user
             if @comment.save
-                render :create
+                render :show
             else
                 render json: @comment.errors.full_messages, status: 400
             end

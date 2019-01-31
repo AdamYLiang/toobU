@@ -3,6 +3,7 @@ import CommentsSection from './comments_section';
 
 const mapStateToProps = (state, ownProps) => {
     const video = ownProps.video || {};
+    const comments = state.entities.comments;
     let currentUser = {}; 
     
     if(video) {
@@ -12,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         video, 
         currentUser,
-        comments: state.entities.comments
+        comments,
     };
 };
 

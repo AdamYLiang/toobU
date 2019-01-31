@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import CommentForm from './comment_form';
 import { createComment } from '../../actions/comment_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
         comment: { body: '' },
+        videoId: ownProps.videoId,
         errors: state.errors.comment,
     };
 };

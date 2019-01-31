@@ -22,7 +22,7 @@ class VideoForm extends React.Component {
         formData.append('video[description]', this.state.description);
         if(this.state.file && this.state.thumbnail){
             formData.append('video[file]', this.state.file);
-            formData.append('video[thumbnail', this.state.thumbnail);
+            formData.append('video[thumbnail]', this.state.thumbnail);
         }
         this.setState({ isUploadDisabled: true }); 
         this.props.submitForm(formData, this.enableSubmit);

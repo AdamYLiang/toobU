@@ -9,7 +9,7 @@ export const createComment = comment => {
     return $.ajax({
         method: 'POST',
         url: `/api/videos/${comment.video_id}/comments`,
-        data: { comment }
+        data: { comment } 
     });
 };
 

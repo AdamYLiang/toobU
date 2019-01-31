@@ -9,7 +9,10 @@ class CommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault(); 
-        this.props.submitForm(this.state);
+        this.props.submitForm({
+            body: this.state.body,
+            video_id: this.props.videoId
+        });
     }
 
     update(field) {
