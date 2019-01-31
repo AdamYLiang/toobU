@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => {
     if(video) {
         currentUser = state.entities.users[state.session.currentUser.id];
     }
-
     return {
         video, 
         currentUser,

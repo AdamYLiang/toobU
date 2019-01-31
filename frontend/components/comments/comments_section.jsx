@@ -4,9 +4,9 @@ import Comment from './comment';
 
 class CommentsSection extends React.Component {
     render() {
-        const commentIds = this.props.video.commentIds || [];
+        const commentIds = Object.keys(this.props.comments) || [];
         const comments = commentIds.length > 0 ? 
-        this.props.video.commentIds.map((commentId, idx) => {
+        commentIds.map((commentId, idx) => {
             return(
                 <div key={idx}>
                     <Comment
@@ -17,7 +17,6 @@ class CommentsSection extends React.Component {
                 </div>
             )
         }) : "";
-        debugger
         return(
             <div className="comments-section-container">
                 <CommentFormContainer videoId={this.props.video.id}/>

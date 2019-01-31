@@ -9,6 +9,7 @@
 User.destroy_all 
 Channel.destroy_all
 Video.destroy_all
+Comment.destroy_all
 
 demo_user = User.create!(username: "TestUser", password: "111111", email: "tester@email.com")
 user1 = User.create!(username: "another", password: "111111", email: "another@email.com")
