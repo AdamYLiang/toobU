@@ -2,6 +2,7 @@ import React from 'react';
 import VideoPlayer from './video_player';
 import UserIcon from '../main/user_icon';
 import { Link } from 'react-router-dom';
+import CommentsSection from '../comments/comments_section_container';
 
 class VideoShow extends React.Component {
 
@@ -30,19 +31,7 @@ class VideoShow extends React.Component {
                             <h2>{video.description}</h2>
                         </div>
                     </div>
-                    <div className="comments">
-                        <h1>COMMENTS HERE</h1>
-                        <h1>COMMENTS HERE</h1>
-                        <h1>COMMENTS HERE</h1>
-                        <h1>COMMENTS HERE</h1>
-                        <h1>COMMENTS HERE</h1>
-                        <h1>COMMENTS HERE</h1>
-                        <h1>COMMENTS HERE</h1>
-                        <h1>COMMENTS HERE</h1>
-                        <h1>COMMENTS HERE</h1>
-
-                        {/* fix comment css */}
-                    </div>
+                    <CommentsSection video={video} />
                 </div>
             </>
         )

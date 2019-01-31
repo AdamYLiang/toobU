@@ -1,4 +1,5 @@
-import { RECEIVE_COMMENT, RECEIVE_COMMENTS, RE, REMOVE_COMMENT} from '../../actions/comment_actions';
+import { RECEIVE_COMMENT, RECEIVE_COMMENTS, REMOVE_COMMENT} from '../../actions/comment_actions';
+import { RECEIVE_VIDEO } from '../../actions/video_actions';
 import { merge } from 'lodash';
 
 const commentsReducer = (state = {}, action) => {
@@ -7,7 +8,7 @@ const commentsReducer = (state = {}, action) => {
     switch(action.type) {
         case RECEIVE_COMMENT:  
             return merge({}, state, { [action.payload.comment.id]: action.payload.comment });
-        case RECEIVE_VIDEOS: 
+        case RECEIVE_VIDEO: 
         case RECEIVE_COMMENTS:
             return merge({}, state, action.payload.comments);
         case REMOVE_COMMENT: 
