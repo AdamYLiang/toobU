@@ -16,4 +16,5 @@ end
 
 json.user do 
     json.partial! "api/users/user", user: @channel.user
+    json.createdAt @channel.user.created_at
 end

@@ -29,6 +29,7 @@ class Comment extends React.Component {
                 <div className="single-comment-details">
                     <div className="single-comment-header">
                         {authorName}
+                        <h2>{formatTimeAgo(this.props.comment.createdAt)}</h2>
                     </div>
                     <h2 className="single-comment-body">{this.props.comment.body}</h2>
                 </div>
@@ -38,3 +39,5 @@ class Comment extends React.Component {
 }
 
 export default Comment;
+
+
