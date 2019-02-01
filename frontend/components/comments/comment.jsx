@@ -8,6 +8,7 @@ class Comment extends React.Component {
         const commentAuthor = this.props.author ? this.props.author : {};
         const author = this.props.author || {};
         const videoAuthor = this.props.videoAuthor || {};
+        debugger
         const userIcon = commentAuthor.ownChannels.length > 0 ? 
             <Link to={`/channel/${commentAuthor.ownChannels[0]}`}><UserIcon type="commenter-icon" currentUser={author} /></Link> :
             <UserIcon type="commenter-icon" currentUser={author} />;
@@ -22,7 +23,9 @@ class Comment extends React.Component {
                 className={author.id === videoAuthor.id ? "single-comment-video-author" : "single-comment-author"}>
                 {author.username}
             </h2>
-            
+        
+        const authorDelete = this.props.currentUserId === this.props.author.id ? this.props.currentUserId : "nope" ;
+
         return (
             <div className="single-comment">
                 {userIcon}
@@ -30,6 +33,7 @@ class Comment extends React.Component {
                     <div className="single-comment-header">
                         {authorName}
                         <h2>{formatTimeAgo(this.props.comment.createdAt)}</h2>
+                        <h2 className="comment-delete" onClick={() => this.props.deleteComment(this.props.comment.id)}>{authorDelete}</h2>
                     </div>
                     <h2 className="single-comment-body">{this.props.comment.body}</h2>
                 </div>

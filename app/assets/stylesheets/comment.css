@@ -51,10 +51,17 @@
     margin-bottom: 32px;
     font-size: 13px;
     line-height: 18px;
+    width: 90%;
 }
 
 .single-comment-header {
     display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.comment-delete {
+    margin-left: auto;
 }
 
 .single-comment-video-author {

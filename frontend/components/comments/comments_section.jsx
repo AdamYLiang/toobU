@@ -4,7 +4,8 @@ import Comment from './comment';
 
 class CommentsSection extends React.Component {
     render() {
-        const { videoAuthor, comments, users } = this.props;
+        const { videoAuthor, comments, users, deleteComment } = this.props;
+        const currentUser = this.props.currentUser ? this.props.currentUser : {};
         const commentList = comments.length > 0 ? comments.reverse().map((comment, idx) => {
             return(
                 <div key={idx}>
@@ -12,6 +13,8 @@ class CommentsSection extends React.Component {
                         comment={comment}
                         author={users[comment.userId]}
                         videoAuthor={videoAuthor}
+                        currentUserId={currentUser.id}
+                        deleteComment={deleteComment}
                     />
                 </div>
             )
