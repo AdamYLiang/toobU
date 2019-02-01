@@ -5,15 +5,14 @@ import { Link } from 'react-router-dom';
 
 class Comment extends React.Component {
     render() {
-        const commentAuthor = this.props.author ? this.props.author : [];
+        const commentAuthor = this.props.author ? this.props.author : {};
         const author = this.props.author || {};
         const videoAuthor = this.props.videoAuthor || {};
-        
-        const userIcon = commentAuthor.ownChannels ? 
+        const userIcon = commentAuthor.ownChannels.length > 0 ? 
             <Link to={`/channel/${commentAuthor.ownChannels[0]}`}><UserIcon type="commenter-icon" currentUser={author} /></Link> :
             <UserIcon type="commenter-icon" currentUser={author} />;
 
-        const authorName = commentAuthor.ownChannels ? 
+        const authorName = commentAuthor.ownChannels.length > 0 ? 
             <Link to={`/channel/${commentAuthor.ownChannels[0]}`}>
             <h2
                 className={author.id === videoAuthor.id ? "single-comment-video-author" : "single-comment-author"}>
