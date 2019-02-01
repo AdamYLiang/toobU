@@ -6,8 +6,15 @@ json.channel do
     json.partial! "api/channels/channel", channel: @video.channel
 end
 
-json.user do 
-    json.partial! "api/users/user", user: @video.channel.user
+json.users do 
+    @video.comments.each do |comment| 
+        json.set! comment.user.id do
+            json.partial! "api/users/user", user: comment.user
+        end
+    end
+    json.set! @video.channel.user.id do 
+        json.partial! "api/users/user", user: @video.channel.user
+    end
 end
 
 json.comments do

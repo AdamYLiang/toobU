@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
         channel = state.entities.channels[video.channelId] || {};
         owner = state.entities.users[channel.userId] || {};
     }
-
     return {
         video,
         videoId,
