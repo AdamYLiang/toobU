@@ -62,6 +62,7 @@
 
 .comment-delete {
     margin-left: auto;
+    cursor: pointer;
 }
 
 .single-comment-video-author {
