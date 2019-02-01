@@ -10,6 +10,7 @@ class VideoShow extends React.Component {
         this.props.fetchVideo(this.props.videoId);
         window.scrollTo(0,0);
     }
+    
 
     render () {
         const { owner, channel, currentUser, video, videoId } = this.props;
