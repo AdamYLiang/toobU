@@ -12,8 +12,14 @@ class VideoForm extends React.Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
+        document.body.style.overflow = "hidden";
     }
+
+    componentWillUnmount() {
+        document.body.style.overflow = "visible";
+    }
+
 
     handleSubmit(e) {
         e.preventDefault();

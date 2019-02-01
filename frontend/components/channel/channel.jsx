@@ -7,6 +7,7 @@ import { NavLink, Route, withRouter, Switch, Link } from 'react-router-dom';
 class Channel extends React.Component {
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.fetchChannel(this.props.channelId);
     }
     
