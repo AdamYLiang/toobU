@@ -4,6 +4,10 @@ import GreetingContainer from './greeting/greeting_container';
 import Logo from './logo';
 
 class Nav extends React.Component {
+    
+    componentWillUnmount() {
+        window.scrollTo(0, 0);
+    }
 
     render() {
         return (

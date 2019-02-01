@@ -1,10 +1,12 @@
 import React from 'react';
+import UserIcon from '../main/user_icon';
 
 class CommentForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.comment;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.loggedIn = this.loggedIn.bind(this);
     }
 
     handleSubmit(e) {
@@ -13,6 +15,7 @@ class CommentForm extends React.Component {
             body: this.state.body,
             video_id: this.props.videoId
         });
+        this.setState({body: ""});
     }
 
     update(field) {
@@ -21,17 +24,30 @@ class CommentForm extends React.Component {
         };
     }
 
-    render() {
-        return (
-            <div className="comment-form-content">
-                <form onSubmit={this.handleSubmit}>
-                    <input 
-                    type="text"
-                    value={this.state.body}
-                    onChange={this.update('body')}
-                    placeholder="Add a public comment..."/>
+    loggedIn(){
+        if(this.props.currentUser === null){
+            this.props.history.push('/login');
+        }
+    }
 
-                    <button type="submit">COMMENT</button>
+    render() {
+        const userIcon = this.props.currentUser === null ? "" : <UserIcon type="commenter-icon" currentUser={this.props.currentUser}/>
+        return (
+            <div className="comment-form-content" onClick={this.loggedIn}>
+                <div>
+                    {userIcon}
+                </div>
+                <form className="comment-submit-form" onSubmit={this.handleSubmit}>
+                    <div className="comment-form-text-submit">
+                        <input 
+                        type="text"
+                        value={this.state.body}
+                        onChange={this.update('body')}
+                        placeholder="Add a public comment..."/>
+                    </div>
+                    <div className="comment-form-submit-button">
+                        <button type="submit">COMMENT</button>
+                    </div>
                 </form>
             </div>
         )

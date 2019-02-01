@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 import CommentsSection from './comments_section';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     const video = ownProps.video || {};
-    const comments = state.entities.comments;
-    let currentUser = {}; 
-    
-    if(video) {
-        currentUser = state.entities.users[state.session.currentUser.id];
-    }
+    const channel = state.entities.channels[video.channelId] || {};
+    const videoAuthor = state.entities.users[channel.userId] || {};
+    const comments = Object.values(state.entities.comments);
+    const users = state.entities.users;
     return {
         video, 
-        currentUser,
         comments,
+        users,
+        videoAuthor,
+        history: ownProps.history
     };
 };
 
@@ -22,4 +23,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentsSection);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentsSection));

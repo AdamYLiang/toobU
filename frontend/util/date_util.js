@@ -3,7 +3,7 @@ export const formatTimeAgo = createdTime => {
     const mins = Math.floor((Date.now() - createdDate) / (60000));
 
     if (mins < 60) {
-        return `${mins} minute${mins === 1 ? "" : "s"} ago`;
+        return mins < 1 ? `Less than a minute ago` : `${mins} minute${mins === 1 ? "" : "s"} ago`;
     } else {
         const hours = Math.floor(mins / 60);
         if (hours < 24) {

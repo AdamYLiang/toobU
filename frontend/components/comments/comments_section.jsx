@@ -4,24 +4,24 @@ import Comment from './comment';
 
 class CommentsSection extends React.Component {
     render() {
-        const commentIds = Object.keys(this.props.comments) || [];
-        const comments = commentIds.length > 0 ? 
-        commentIds.map((commentId, idx) => {
+        const { videoAuthor, comments, users } = this.props;
+        const commentList = comments.length > 0 ? comments.reverse().map((comment, idx) => {
             return(
                 <div key={idx}>
-                    <Comment
-                    key={idx}
-                    currentUser={this.props.currentUser}
-                    comment={this.props.comments[commentId]}
+                    <Comment 
+                        comment={comment}
+                        author={users[comment.userId]}
+                        videoAuthor={videoAuthor}
                     />
                 </div>
             )
         }) : "";
+
         return(
             <div className="comments-section-container">
-                <CommentFormContainer videoId={this.props.video.id}/>
+                <CommentFormContainer videoId={this.props.video.id} />
                 <div className="comments">
-                    { comments }
+                    { commentList }
                 </div>
             </div>
         )
