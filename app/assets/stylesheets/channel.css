@@ -204,3 +204,31 @@
 .channel-homepage-content {
     padding: 0 65px;
 }
+
+.channel-about-content{ 
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+    font-size: 13px;
+}
+
+.channel-about-description {
+    display: flex;
+    flex-direction: column;
+    padding-right: 96px;
+}
+
+.channel-about-description-header {
+    margin: 24px 0;
+    font-size: 16px;
+}
+
+.channel-about-stats {
+    display: flex;
+    flex-direction: column;
+}   
+
+.channel-about-stats-header {
+    font-size: 16px;
+    padding: 12px 0;
+}
