@@ -23,3 +23,9 @@ export const formatTimeAgo = createdTime => {
         }
     }
 };
+
+export const creationDate = createdTime => {
+    const createdDate = new Date(createdTime); 
+    let dateArr = createdDate.toDateString().split(" ").slice(1);
+    return `${dateArr[0]} ${dateArr[1]}, ${dateArr[2]}`;
+};
