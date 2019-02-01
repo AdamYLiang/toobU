@@ -17,7 +17,7 @@ const channelsReducer = (state = {}, action) => {
         case RECEIVE_VIDEO: 
             return merge({}, state, { [action.payload.channel.id]: action.payload.channel });
         case RECEIVE_VIDEOS:
-            return merge({}, state, action.payload.channels);
+            return {...action.payload.channels};
         default: 
             return state;
     }
