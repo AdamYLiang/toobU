@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    //NOTE: Fix state passing
     const video = ownProps.video || {};
     const channel = state.entities.channels[video.channelId] || {};
     const videoAuthor = state.entities.users[channel.userId] || {};
