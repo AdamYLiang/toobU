@@ -16,6 +16,7 @@ class Video < ApplicationRecord
 
     belongs_to :channel
     has_many :comments, dependent: :destroy
+    has_many :likes, as: :likeable, dependent: :destroy 
 
     has_one_attached :file
     has_one_attached :thumbnail

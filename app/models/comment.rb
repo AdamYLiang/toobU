@@ -13,6 +13,7 @@
 class Comment < ApplicationRecord
     validates_presence_of :body 
 
+    has_many :likes, as: :likeable, dependent: :destroy 
     belongs_to :user
     belongs_to :video
 end
