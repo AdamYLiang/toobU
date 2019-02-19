@@ -25,6 +25,11 @@ class Main extends React.Component {
                     <Route path="/" component={HomeContainer} />
                 </Switch>
             </div>
+
+            <div>
+                <h1>GITHUB LINK HERE</h1>
+                <h1>LINKEDIN HERE</h1>
+            </div>
             </>
         )
     }
