@@ -3,7 +3,7 @@ class Api::LikesController < ApplicationController
 
     def create
         @like = Like.find_by(
-            user_id: params[:like][:user_id],
+            user_id: current_user.id,
             likeable_id: params[:like][:likeable_id],
             likeable_type: params[:like][:likeable_type]
         )
@@ -22,7 +22,7 @@ class Api::LikesController < ApplicationController
 
     def destroy
         @like = Like.find_by(
-            user_id: params[:like][:user_id],
+            user_id: current_user.id,
             likeable_id: params[:like][:likeable_id],
             likeable_type: params[:like][:likeable_type]
         )

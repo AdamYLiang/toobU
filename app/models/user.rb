@@ -23,7 +23,8 @@ class User < ApplicationRecord
 
   has_many :channels, dependent: :destroy
   has_many :videos, through: :channels
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   def self.find_by_credentials(params)
     user = User.find_by(username: params[:username]) || User.find_by(email: params[:username])
