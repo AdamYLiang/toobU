@@ -2,9 +2,6 @@ class Api::LikesController < ApplicationController
     before_action :ensure_logged_in, only: [:create, :destroy]
 
     def create
-        #find by and then create 
-        #pass up the like and maybe the differential ofr the bar 
-        #check the redux state after this and we're good!
         @like = Like.find_by(
             user_id: params[:like][:user_id],
             likeable_id: params[:like][:likeable_id],
