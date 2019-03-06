@@ -1,5 +1,4 @@
 export const createVideoLike = (thumbs_up, videoId) => {
-    debugger
     return $.ajax({
         method: "POST",
         url: `/api/videos/${videoId}/likes`,

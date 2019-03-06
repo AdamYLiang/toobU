@@ -23,7 +23,6 @@ class VideoShow extends React.Component {
                         <div className="video-detail-title">
                             <h1>{video.title}</h1>
                             <h2 className="views">999 views</h2>
-                            <VideoLikes video={video} />
                         </div>
 
                         <div className="video-detail-user">
@@ -33,6 +32,7 @@ class VideoShow extends React.Component {
                             </div>
                             <h2>{video.description}</h2>
                         </div>
+                        <VideoLikes video={video} />
                     </div>
                     <CommentsSection video={video} />
                 </div>

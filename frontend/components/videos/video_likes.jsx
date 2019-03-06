@@ -17,7 +17,7 @@ class VideoLikes extends React.Component {
     render() {
         const { numLikes, numDislikes } = this.props;
         return (
-            <div class="video-likes-main-container">
+            <div className="video-likes-main-container">
                 <h1>Likes: {numLikes}</h1>
                 <h1>Dislikes: {numDislikes}</h1>
                 <div onClick={() => this.clickButton(true)}>

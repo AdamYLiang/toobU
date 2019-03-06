@@ -22,6 +22,8 @@ const videosReducer = (state = {}, action) => {
             return newState;
         case CREATE_VIDEO_LIKE:
             newState = merge({}, state);
+            newState[action.payload.likeableId].numLikes = action.payload.video.numLikes;
+            newState[action.payload.likeableId].numDislikes = action.payload.video.numDislikes;
             return newState;
         default:
             return state;
