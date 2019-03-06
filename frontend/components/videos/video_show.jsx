@@ -3,6 +3,7 @@ import VideoPlayer from './video_player';
 import UserIcon from '../main/user_icon';
 import { Link } from 'react-router-dom';
 import CommentsSection from '../comments/comments_section_container';
+import VideoLikes from './video_likes_container';
 
 class VideoShow extends React.Component {
 
@@ -22,6 +23,7 @@ class VideoShow extends React.Component {
                         <div className="video-detail-title">
                             <h1>{video.title}</h1>
                             <h2 className="views">999 views</h2>
+                            <VideoLikes video={video} />
                         </div>
 
                         <div className="video-detail-user">

@@ -1,21 +1,21 @@
-export const createVideoLike = (thumbs, videoId) => {
+export const createVideoLike = (thumbs_up, videoId) => {
     return $.ajax({
         method: "POST",
         url: `/api/videos/${videoId}/likes`,
         data: { like: {
-            thumbs,
+            thumbs_up,
             likeable_type: "Video",
             likeable_id: videoId,
         }}
     });
 };
 
-export const createCommentLike = (thumbs, commentId) => {
+export const createCommentLike = (thumbs_up, commentId) => {
     return $.ajax({
         method: "POST",
         url: `/api/comments/${commentId}/likes`,
         data: { like: {
-            thumbs,
+            thumbs_up,
             likeable_type: "Comment",
             likeable_id: commentId,
         }}
