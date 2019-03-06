@@ -21,7 +21,6 @@ const videosReducer = (state = {}, action) => {
             newState = merge({}, state); 
             return newState;
         case CREATE_VIDEO_LIKE:
-            debugger
             newState = merge({}, state);
             return newState;
         default:

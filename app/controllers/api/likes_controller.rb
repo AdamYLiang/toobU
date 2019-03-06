@@ -17,6 +17,8 @@ class Api::LikesController < ApplicationController
 
         if @like.save 
             render :show
+        else
+            render json: @like.errors.full_messages
         end
     end
 
