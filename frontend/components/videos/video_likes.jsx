@@ -32,3 +32,8 @@ class VideoLikes extends React.Component {
 }
 
 export default VideoLikes;
+
+//TODO:
+//CHECK LIKES FOR USER LOGGED IN ETC
+//LIKES FOR COMMENTS
+//CSS FOR LIKES ON VIDEOS
