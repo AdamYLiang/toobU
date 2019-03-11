@@ -42,4 +42,3 @@ class VideoShow extends React.Component {
 }
 
 export default VideoShow;
-//access show with Video.first.file.service_url as src 
