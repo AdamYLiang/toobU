@@ -4,8 +4,6 @@ import VideoLikes from './video_likes';
 import { createVideoLike, deleteVideoLike } from '../../actions/like_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    //PASS IN VIDEO THRU PROPS!!
-    //USER LIKES VIA USER ARRAY!
     const video = ownProps.video;
     const numLikes = video.numLikes;
     const numDislikes = video.numDislikes;
