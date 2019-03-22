@@ -17,7 +17,13 @@ export const formatTimeAgo = createdTime => {
                 if (weeks < 4) {
                     return `${weeks} week${weeks > 1 ? "s" : ""} ago`;
                 } else {
-                    return `Too long ago`;
+                    // return `Too long ago`;
+                    const months = Math.floor(weeks / 4);
+                    if ( months < 12) {
+                        return `${months} month${months > 1 ? "s" : ""} ago`;
+                    } else {
+                        return `Too Long Ago`;
+                    }
                 }
             }
         }
