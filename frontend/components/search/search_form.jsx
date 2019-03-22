@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class SearchForm extends React.Component {
     constructor(props){
         super(props);
@@ -21,6 +22,7 @@ class SearchForm extends React.Component {
             .then(() => this.setState({
                 search: "",
             }));
+        this.props.history.push(`/results?search_query=${this.state.search}`);
     }
 
     render() {

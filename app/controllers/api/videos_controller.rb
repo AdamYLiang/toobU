@@ -21,8 +21,9 @@ class Api::VideosController < ApplicationController
     def index 
         if params[:search]
             search
+        else
+            @videos = Video.includes(:channel).limit(10)
         end
-        @videos = Video.includes(:channel).limit(10)
     end
 
     def update 
@@ -40,7 +41,8 @@ class Api::VideosController < ApplicationController
     end
 
     def search
-        debugger
+        query_str = "%#{params[:search]}%"
+        @videos = Video.where('title ILIKE ?', query_str)
     end
 
     private
