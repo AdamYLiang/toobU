@@ -31,7 +31,7 @@ const receiveErrors = errors => ({
     errors
 });
 
-export const fetchVideos = () => dispatch => VideoApiUtil.fetchVideos() 
+export const fetchVideos = options => dispatch => VideoApiUtil.fetchVideos(options) 
     .then(payload => dispatch(receiveVideos(payload)));
 
 export const fetchVideo = (id) => dispatch => VideoApiUtil.fetchVideo(id) 
