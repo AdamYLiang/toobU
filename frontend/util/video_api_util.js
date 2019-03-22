@@ -2,7 +2,7 @@ export const fetchVideos = options => {
     return $.ajax({
         method: 'GET',
         url: '/api/videos',
-        data: { search: 'wow' },
+        data: options,
     });
 };
 

@@ -19,6 +19,9 @@ class Api::VideosController < ApplicationController
     end
 
     def index 
+        if params[:search]
+            search
+        end
         @videos = Video.includes(:channel).limit(10)
     end
 
@@ -34,6 +37,10 @@ class Api::VideosController < ApplicationController
         else
             render json: ["Invalid video"], status: 422
         end
+    end
+
+    def search
+        debugger
     end
 
     private
