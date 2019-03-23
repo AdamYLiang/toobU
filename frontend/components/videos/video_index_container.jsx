@@ -13,7 +13,7 @@ const mapStateToProps = ({ entities: { users, channels, videos } }) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchVideos: () => dispatch(fetchVideos())
+        fetchVideos: options => dispatch(fetchVideos(options))
     };
 };
 

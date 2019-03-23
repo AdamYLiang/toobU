@@ -1,4 +1,4 @@
-import { RECEIVE_VIDEO, RECEIVE_VIDEOS, REMOVE_VIDEO } from '../../actions/video_actions';
+import { RECEIVE_VIDEO, RECEIVE_VIDEOS, RESET_VIDEOS, REMOVE_VIDEO } from '../../actions/video_actions';
 import { RECEIVE_CHANNEL } from '../../actions/channel_actions';
 import { RECEIVE_COMMENT } from '../../actions/comment_actions';
 import { CREATE_VIDEO_LIKE, REMOVE_VIDEO_LIKE} from '../../actions/like_actions';
@@ -8,6 +8,8 @@ const videosReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState;
     switch(action.type){
+        case RESET_VIDEOS:
+            return {};
         case RECEIVE_VIDEO:
             return merge({}, state, {[action.payload.video.id]: action.payload.video});
         case RECEIVE_CHANNEL:

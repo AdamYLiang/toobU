@@ -3,6 +3,7 @@ import * as VideoApiUtil from '../util/video_api_util';
 export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const REMOVE_VIDEO = "REMOVE_VIDEO";
+export const RESET_VIDEOS = "RESET_VIDEOS";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 
 const receiveVideos = (payload) => {
@@ -30,6 +31,13 @@ const receiveErrors = errors => ({
     type: RECEIVE_VIDEO_ERRORS,
     errors
 });
+
+export const resetVideos = (payload) => {
+    return {
+        type: RESET_VIDEOS,
+        payload
+    };
+};
 
 export const fetchVideos = options => dispatch => VideoApiUtil.fetchVideos(options) 
     .then(payload => dispatch(receiveVideos(payload)));
