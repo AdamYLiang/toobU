@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { fetchVideos } from '../../actions/video_actions';
 import SearchResults from './search_results';
 
-const mapStateToProps = ({ entities: { videos }}) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        videos,
+        search: ownProps.location.search.slice(14),
+        videos: Object.values(state.entities.videos),
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        fetchVideos: options => dispatch(fetchVideos(options))
     };
 };
 
