@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { logout } from '../../../actions/session_actions';
-import Greeting from './greeting';
+import { logout } from '../../actions/session_actions';
+import Login from './login';
 
 
 const mapStateToProps = ({ session, entities: { users, channels } }) => {
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

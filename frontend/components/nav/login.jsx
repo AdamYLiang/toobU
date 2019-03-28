@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UserIcon from '../../main/user_icon';
 
-class Greeting extends React.Component {
+class Login extends React.Component {
     constructor(props){
         super(props);
         this.state = { showDropdown: false };
@@ -90,4 +89,4 @@ class Greeting extends React.Component {
 
 
 
-export default Greeting;
+export default Login;
