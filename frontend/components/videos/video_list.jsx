@@ -1,7 +1,5 @@
 import React from 'react';
 import VideoListItem from './video_list_item';
-import UserIcon from '../main/user_icon';
-import { Link } from 'react-router-dom';
 
 class VideoList extends React.Component {
     render() {

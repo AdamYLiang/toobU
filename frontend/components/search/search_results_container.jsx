@@ -7,6 +7,8 @@ const mapStateToProps = (state, ownProps) => {
     return {
         search: ownProps.location.search.slice(14),
         videos: Object.values(state.entities.videos),
+        users: state.entities.users,
+        channels: state.entities.channels
     };
 };
 

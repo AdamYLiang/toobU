@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoListItem from '../videos/video_list_item';
+import SearchResultItem from './search_result_item';
 
 class SearchResults extends React.Component {
     constructor(props){
@@ -21,18 +21,20 @@ class SearchResults extends React.Component {
     }
 
     render(){
-        const { videos } = this.props;
+        const { videos, users, channels } = this.props;
         const videoList = videos.length > 0 ? 
                         videos.map((video, idx) => {
+                            let author = users[channels[video.channelId].userId] || {};
                             return (
-                                <li key={idx}>
-                                    <img src={video.thumbURL} />
-                                    <h1>{video.title}</h1>
-                                </li>
+                                <div key={idx} className="single-search">
+                                    <SearchResultItem
+                                    video={video}
+                                    author={author} />
+                                </div>
                             )
                         }) : "";
         return(
-            <ul>
+            <ul className="search-results-list">
                 {videoList}
             </ul>
         );
