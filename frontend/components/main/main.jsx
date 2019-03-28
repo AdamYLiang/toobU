@@ -29,8 +29,8 @@ class Main extends React.Component {
             </div>
 
             <footer>
-                <a href="https://github.com/AdamYLiang"><i className="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/adamyliang/"><i className="fab fa-linkedin"></i></a>
+                <a href="https://github.com/AdamYLiang"><i className="fab fa-github fa-2x "></i></a>
+                <a href="https://www.linkedin.com/in/adamyliang/"><i className="fab fa-linkedin fa-2x"></i></a>
             </footer>
             </>
         )

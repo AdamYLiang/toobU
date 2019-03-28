@@ -54,3 +54,13 @@
     margin-left: 20px;
     margin-right: 8px;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer a {
+    padding: 5px;
+    margin: 15px;
+}
