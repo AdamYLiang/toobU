@@ -16,10 +16,10 @@ class SearchResultItem extends React.Component {
                         <h1 className="single-result-title">{video.title}</h1>
                     </Link>
                     <div className="single-result-details-author-date-info">
-                        <h1>{author.username}</h1>
+                        <h1 className='single-result-author-name'>{author.username}</h1>
                         <h1>{formatTimeAgo(video.createdAt)}</h1>
                     </div>
-                    <h1>{video.description}</h1>
+                    <h1 className="single-result-video-description">{video.description}</h1>
                 </div>
             </>
         )

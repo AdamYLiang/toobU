@@ -73,6 +73,11 @@
     padding: 16px 24px;
 }
 
+.search-results-list-interior {
+    width: 70%;
+    margin: 0 auto;
+}
+
 .single-search {
     display:flex; 
     margin-top: 16px;
@@ -96,4 +101,17 @@
     color: rgb(96, 96, 96);
     font-size: 13px;
     line-height: 18px;
+}
+
+.single-result-author-name:after {
+    content: '•';
+    padding: 0 5px;
+}
+
+.single-result-video-description {
+    padding-top: 8px;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 8px;
+    color: rgb(96, 96, 96);
 }

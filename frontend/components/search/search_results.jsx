@@ -34,9 +34,11 @@ class SearchResults extends React.Component {
                             )
                         }) : "";
         return(
-            <ul className="search-results-list">
-                {videoList}
-            </ul>
+            <div className="search-results-list">
+                <div className="search-results-list-interior">
+                    {videoList}
+                </div>
+            </div>
         );
     }
 }
