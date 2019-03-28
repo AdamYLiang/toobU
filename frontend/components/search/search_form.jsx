@@ -19,10 +19,7 @@ class SearchForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.resetVideos();
-        // this.props.fetchVideos(this.state)
-        //     .then(() => this.setState({
-        //         search: "",
-        //     }));
+        this.setState({ search: "" });
         this.props.history.push(`/results?search_query=${this.state.search}`);
     }
 
