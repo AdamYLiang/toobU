@@ -32,6 +32,7 @@ class VideoShow extends React.Component {
                             </div>
                             <div className="video-detail-description">
                                 <h2>{video.description}</h2>
+                                <VideoLikes video={video} />
                             </div>
                         </div>
                     </div>
