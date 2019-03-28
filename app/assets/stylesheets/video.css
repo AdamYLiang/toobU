@@ -137,6 +137,11 @@
     margin-bottom: 12px;
 }
 
+.video-detail-description {
+    display: flex;
+    justify-content: space-between;
+}
+
 .uploader-name {
     line-height: 16px;
     font-size: 14px;

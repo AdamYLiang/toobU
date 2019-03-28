@@ -30,9 +30,10 @@ class VideoShow extends React.Component {
                                 <UserIcon type="uploader-icon" currentUser={owner} />
                                 <Link to={`/channel/${channel.id}`}><h1 className="uploader-name">{owner.username}</h1></Link>
                             </div>
-                            <h2>{video.description}</h2>
+                            <div className="video-detail-description">
+                                <h2>{video.description}</h2>
+                            </div>
                         </div>
-                        <VideoLikes video={video} />
                     </div>
                     <CommentsSection video={video} />
                 </div>
