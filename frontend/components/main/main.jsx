@@ -8,7 +8,7 @@ import EditChannelContainer from '../channel/edit_channel_container';
 import VideoUploadContainer from '../videos/video_upload_container';
 import VideoShowContainer from '../videos/video_show_container';
 import SearchResultsContainer from '../search/search_results_container';
-import { ProtectedRoute, CreateChannelRoute, EditChannelRoute, ChannelExistsRoute } from '../../util/route_util';
+import { CreateChannelRoute, EditChannelRoute, ChannelExistsRoute } from '../../util/route_util';
 
 class Main extends React.Component {
 
@@ -28,10 +28,10 @@ class Main extends React.Component {
                 </Switch>
             </div>
 
-            <div>
-                <h1>GITHUB LINK HERE</h1>
-                <h1>LINKEDIN HERE</h1>
-            </div>
+            <footer>
+                <a href="https://github.com/AdamYLiang"><i className="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/adamyliang/"><i className="fab fa-linkedin"></i></a>
+            </footer>
             </>
         )
     }
