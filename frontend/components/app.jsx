@@ -13,6 +13,10 @@ const App = () => (
             <AuthRoute exact path="/signup/" component={SignupFormContainer}/>
             <Route path="/" component={MainContainer}/>
         </Switch>
+        <footer>
+            <a href="https://github.com/AdamYLiang"><i className="fab fa-github fa-2x "></i></a>
+            <a href="https://www.linkedin.com/in/adamyliang/"><i className="fab fa-linkedin fa-2x"></i></a>
+        </footer>
     </div>
 );
 

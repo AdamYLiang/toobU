@@ -1,6 +1,7 @@
 #root {
-    height: 100%;
     width: 100%;
+    min-height: 100vh;
+    min-height: 100%;
 }
 
 #main-content {
@@ -58,9 +59,12 @@
 footer {
     display: flex;
     justify-content: center;
+    left: 0;
+    bottom: 0;
 }
 
 footer a {
     padding: 5px;
     margin: 15px;
 }
+
