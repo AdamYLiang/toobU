@@ -67,3 +67,33 @@
     line-height: 18px;
     color: #636363;
 }
+
+.search-results-list {
+    width: 100%;
+    padding: 16px 24px;
+}
+
+.single-search {
+    display:flex; 
+    margin-top: 16px;
+    height: 138px;
+    width: 100%;
+}
+
+.single-search img {
+    width: 246px;
+    height: 137px;
+    padding-right: 16px;
+}
+
+.single-result-title {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.single-result-details-author-date-info {
+    display: flex;
+    color: rgb(96, 96, 96);
+    font-size: 13px;
+    line-height: 18px;
+}
