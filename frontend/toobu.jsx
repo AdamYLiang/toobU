@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     else {
         store = configureStore();
     }
-
     const rootEl = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, rootEl );
 })
